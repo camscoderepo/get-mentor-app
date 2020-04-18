@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -15,9 +16,11 @@ const config = {
 class Firebase {
   constructor() {
     app.initializeApp(config);
+    this.emailAuthProvider = app.auth.EmailAuthProvider;
     this.auth = app.auth();
+    this.db = app.database();
 
-    // this.googleProvider = new app.auth.GoogleAuthProvider();
+    this.googleProvider = new app.auth.GoogleAuthProvider();
   }
 
   // *** Auth API ***
@@ -27,8 +30,8 @@ class Firebase {
   doSignInWithEmailAndPassword = (email, password) =>
     this.auth.signInWithEmailAndPassword(email, password);
 
-  // doSignInWithGoogle = () =>
-  //   this.auth.signInWithPopup(this.googleProvider);
+  doSignInWithGoogle = () =>
+    this.auth.signInWithPopup(this.googleProvider);
 
   doSignOut = () => this.auth.signOut();
 

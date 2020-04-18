@@ -36,7 +36,7 @@ const Navbar = () => {
             </Link>
           </NavLinkWrapper>
           <NavLinkWrapper>
-            <Link style={linkStyle} to={ROUTES.SIGN_IN}>
+            <Link style={linkStyle} to={ROUTES.SIGN_UP}>
               Sign In
             </Link>
           </NavLinkWrapper>

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { HomePageContainer, HomePageHeading } from "./home-styles";
+import React from 'react';
+// import React, { useState, useEffect } from 'react';
+import { HomePageContainer, HomePageHeading } from './home-styles';
+// import { FirebaseContext } from '../Firebase';
 // import axios from "axios";
 // import Topic from "../../components/topic/topic";
 
@@ -27,8 +29,9 @@ const HomePage = () => {
   return (
     <div>
       <HomePageContainer>
-        <HomePageHeading>Nam Jai Means Helping People</HomePageHeading>
-        {/* {recentTopics} */}
+        <HomePageHeading>
+          Nam Jai Means Helping People
+        </HomePageHeading>
       </HomePageContainer>
     </div>
   );

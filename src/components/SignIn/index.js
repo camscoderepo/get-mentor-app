@@ -111,6 +111,8 @@ class SignInGoogleBase extends Component {
       <form onSubmit={this.onSubmit}>
         <h4>Sign With Google</h4>
         <button type="submit">Sign In with Google</button>
+
+        <h4> Sign In With Email</h4>
         {error && <p>{error.message}</p>}
       </form>
     );

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 150 100">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="150" height="100" fill="#A9AFB5"/>
+    <text fill="#ECECEC" font-family="ProximaNova-Bold, Proxima Nova" font-size="22" font-weight="bold" letter-spacing=".997">
+      <tspan x="47" y="57">Logo</tspan>
+    </text>
+  </g>
+</svg>

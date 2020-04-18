@@ -52,6 +52,11 @@ const NavigationAuth = () => {
             </Link>
           </NavLinkWrapper>
           <NavLinkWrapper>
+            <Link style={linkStyle} to={ROUTES.ADMIN}>
+              Admin
+            </Link>
+          </NavLinkWrapper>
+          <NavLinkWrapper>
             <SignOutButton />
           </NavLinkWrapper>
         </NavLinkContainer>

@@ -102,7 +102,7 @@ const NavigationNonAuth = () => {
             </NavLinkWrapper>
             <NavLinkWrapper>
               <Link style={linkStyle} to={ROUTES.SIGN_IN}>
-                Sign In
+                Log In
               </Link>
             </NavLinkWrapper>
             <RegisterBtn>

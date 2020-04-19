@@ -43,7 +43,7 @@ export const MobileLogoWrapper = styled.div`
   display: none;
   @media screen and (max-width: 600px) {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 16px;
     left: 16px;
     bottom: auto;

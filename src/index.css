@@ -18,6 +18,12 @@ a {
   text-decoration: none;
 }
 
-/* .container {
-  margin-top: 70px; 
-} */
+.container {
+  margin-top: 8%; 
+}
+
+@media screen and (max-width: 600px) {
+  .container{
+     margin-top: 25%;
+  }
+}

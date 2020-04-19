@@ -3,11 +3,14 @@ import { Link, withRouter } from 'react-router-dom';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import { SignUPWrapper } from './signup-styles';
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
-    <SignUpForm />
+    <SignUPWrapper>
+      <h1>SignUp</h1>
+      <SignUpForm />
+    </SignUPWrapper>
   </div>
 );
 

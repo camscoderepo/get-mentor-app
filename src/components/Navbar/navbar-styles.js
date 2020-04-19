@@ -8,29 +8,41 @@ export const Header = styled.header`
   bottom: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #0f94d8;
+  /* background-color: #0f94d8; */
 `;
 export const NavContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0 60px 0 60px;
 `;
 export const LogoWrapper = styled.div`
-  background-color: A9AFB5;
+  margin-top: 26px;
 `;
 
 export const NavLinkContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 100%;
   margin-top: 10px;
 `;
 
 export const NavLinkWrapper = styled.div`
-  height: 30px;
-  width: 80px;
-  /* background-color: white; */
-  color: white;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 31px;
+`;
+
+export const RegisterBtn = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 12px 14px;
+  background: #f5c341;
+  border-radius: 4px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  margin-left: 31px;
 `;

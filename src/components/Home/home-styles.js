@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HomePageContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: #f2f2f2;
+  background: white;
   padding-left: 10%;
   height: 100vh;
 `;

@@ -1,20 +1,26 @@
 import React from 'react';
 import { AuthUserContext } from '../Session';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from '../../assets/svgs/logo-placeholder.svg';
+import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
 import {
   Header,
   NavContainer,
   LogoWrapper,
   NavLinkContainer,
   NavLinkWrapper,
+  RegisterBtn,
 } from './navbar-styles';
 import SignOutButton from '../SignOut';
 
 import * as ROUTES from '../../constants/routes';
 
 const linkStyle = {
-  color: 'white',
+  color: 'black',
+  fontfamily: 'Inter',
+  fontStyle: 'normal',
+  fontWeight: 600,
+  fontSize: 14,
+  lineHeight: '140%',
 };
 
 const Navbar = ({ authUser }) => (
@@ -75,11 +81,6 @@ const NavigationNonAuth = () => {
         </LogoWrapper>
         <NavLinkContainer>
           <NavLinkWrapper>
-            <Link style={linkStyle} to={ROUTES.ABOUT}>
-              About
-            </Link>
-          </NavLinkWrapper>
-          <NavLinkWrapper>
             <Link style={linkStyle} to={ROUTES.MENTORS}>
               Mentors
             </Link>
@@ -89,6 +90,11 @@ const NavigationNonAuth = () => {
               Sign In
             </Link>
           </NavLinkWrapper>
+          <RegisterBtn>
+            <Link style={linkStyle} to={ROUTES.SIGN_UP}>
+              Register
+            </Link>
+          </RegisterBtn>
         </NavLinkContainer>
       </NavContainer>
     </Header>

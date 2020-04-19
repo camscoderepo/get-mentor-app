@@ -10,6 +10,7 @@ export const HomePageContainer = styled.main`
 `;
 
 export const HomePageHeading = styled.h1`
+  display: none;
   font-size: 60px;
   font-family: Mr Eaves Mod OT;
   font-weight: 300;

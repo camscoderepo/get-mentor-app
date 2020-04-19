@@ -9,15 +9,34 @@ export const Header = styled.header`
   padding-top: 10px;
   padding-bottom: 10px;
   /* background-color: #0f94d8; */
+
+  /* medaia queries */
+  @media screen and (max-width: 600px) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    /* background-color: #0f94d8; */
+    background: #ffffff;
+    box-shadow: 0px 0px 14px rgba(121, 136, 149, 0.25);
+    border-radius: 31px 31px 0px 0px;
+  }
 `;
 export const NavContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0 60px 0 60px;
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+  }
 `;
 export const LogoWrapper = styled.div`
   margin-top: 26px;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const NavLinkContainer = styled.div`
@@ -26,10 +45,16 @@ export const NavLinkContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 10px;
+  @media screen and (max-width: 600px) {
+    justify-content: space-around;
+  }
 `;
 
 export const NavLinkWrapper = styled.div`
   margin-left: 31px;
+  @media screen and (max-width: 600px) {
+    margin: 0;
+  }
 `;
 
 export const RegisterBtn = styled.div`

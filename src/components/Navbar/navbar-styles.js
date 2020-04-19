@@ -39,6 +39,18 @@ export const LogoWrapper = styled.div`
   }
 `;
 
+export const MobileLogoWrapper = styled.div`
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    bottom: auto;
+    right: auto;
+  }
+`;
+
 export const NavLinkContainer = styled.div`
   display: flex;
   justify-content: flex-end;

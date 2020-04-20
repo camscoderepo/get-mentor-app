@@ -50,11 +50,11 @@ const NavigationAuth = () => {
             </Link>
           </LogoWrapper>
           <NavLinkContainer>
-            <NavLinkWrapper>
+            {/* <NavLinkWrapper>
               <Link style={linkStyle} to={ROUTES.ABOUT}>
                 About
               </Link>
-            </NavLinkWrapper>
+            </NavLinkWrapper> */}
             <NavLinkWrapper>
               <Link style={linkStyle} to={ROUTES.MENTORS}>
                 Mentors

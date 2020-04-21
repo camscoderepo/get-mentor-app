@@ -1,120 +1,145 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import InputFloatLabel from '../Input';
 import { Link, withRouter } from 'react-router-dom';
-
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import { SignUpWrapper } from './signup-styles';
+import { validateEmail } from '../../utils/ValidateEmail';
+import {
+  FormWrapper,
+  Button,
+  Errors,
+  EyeIconImg,
+  PasswordWrapper,
+  SignUpWrapper,
+} from './signup-styles';
+import EyeIcon from '../../assets/images/eye.png';
+// import usePasswordValidator from '../PasswordValidator';
 
 const SignUpPage = () => (
   <div>
     <SignUpWrapper>
-      <h1>SignUp</h1>
+      <h1>Register</h1>
       <SignUpForm />
     </SignUpWrapper>
   </div>
 );
 
-const INITIAL_STATE = {
-  username: '',
-  email: '',
-  passwordOne: '',
-  passwordTwo: '',
-  error: null,
-};
+const SignUpHooks = (props) => {
+  const [isValid, setIsValid] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [username, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [passwordOne, setPasswordOne] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
 
-class SignUpFormBase extends Component {
-  constructor(props) {
-    super(props);
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(username, passwordOne, email);
+  // };
 
-    this.state = { ...INITIAL_STATE };
-  }
-
-  onSubmit = (event) => {
-    const { username, email, passwordOne } = this.state;
-
-    this.props.firebase
+  const onSubmit = (event) => {
+    props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then((authUser) => {
         // Create a user in your Firebase realtime database
-        this.props.firebase
+        props.firebase
           .user(authUser.user.uid)
           .set({
             username,
             email,
           })
           .then(() => {
-            this.setState({ ...INITIAL_STATE });
-            this.props.history.push(ROUTES.HOME);
+            setEmail('');
+            setUserName('');
+            setPasswordOne('');
+            props.history.push(ROUTES.HOME);
           })
           .catch((error) => {
-            this.setState({ error });
+            setError({ error });
           });
       })
       .catch((error) => {
-        this.setState({ error });
+        setError({ error });
       });
 
     event.preventDefault();
   };
 
-  onChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+  const togglePasswordVisiblity = () => {
+    setShowPassword(!showPassword);
   };
 
-  render() {
-    const {
-      username,
-      email,
-      passwordOne,
-      passwordTwo,
-      error,
-    } = this.state;
+  // useEffect(() => {
+  //   if (!state.email) {
+  //     setEmailError('');
+  //   } else {
+  //     if (validateEmail(state.email)) {
+  //       setEmailError('');
+  //     } else {
+  //       setEmailError('Please enter a valid email.');
+  //     }
+  //   }
+  // }, [state.email]);
 
-    const isInvalid =
-      passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      email === '' ||
-      username === '';
+  // const checkValid = () => {
+  //   if (
+  //     state.passwordOne !== state.passwordTwo ||
+  //     state.passwordOne === '' ||
+  //     state.email === '' ||
+  //     state.username === ''
+  //   ) {
+  //     setIsValid(false);
+  //   } else {
+  //     setIsValid(true);
+  //   }
+  // };
+  const showEye = true;
+  const handleUserName = (e) => {
+    setUserName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPasswordOne(e.target.value);
+  };
 
-    return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="username"
-          value={username}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          name="email"
-          value={email}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
+  return (
+    <FormWrapper onSubmit={onSubmit}>
+      <InputFloatLabel
+        name="username"
+        label="Username"
+        type="text"
+        value={username}
+        onChange={handleUserName}
+      />
+      <InputFloatLabel
+        name="email"
+        label="Email"
+        type="email"
+        value={email}
+        onChange={handleEmail}
+      />
+      {/* <Errors>{emailError}</Errors> */}
+      <PasswordWrapper>
+        <InputFloatLabel
           name="passwordOne"
+          label="Password"
+          type={showPassword ? 'text' : 'password'}
+          showEye={showEye}
           value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Password"
+          onChange={handlePassword}
         />
-        <input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
-
-        {error && <p>{error.message}</p>}
-      </form>
-    );
-  }
-}
+        <EyeIconImg src={EyeIcon} onClick={togglePasswordVisiblity} />
+      </PasswordWrapper>
+      {/* <Errors>{}</Errors> */}
+      <Button type="submit" disabled={isValid}>
+        Sign Up
+      </Button>
+    </FormWrapper>
+  );
+};
 
 const SignUpLink = () => (
   <p>
@@ -122,7 +147,7 @@ const SignUpLink = () => (
   </p>
 );
 
-const SignUpForm = withRouter(withFirebase(SignUpFormBase));
+const SignUpForm = withRouter(withFirebase(SignUpHooks));
 
 export default SignUpPage;
 

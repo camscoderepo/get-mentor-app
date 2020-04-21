@@ -1,5 +1,8 @@
-import React from "react";
-import { MentorsPageContainer, MentorsPageHeading } from "./mentor-styles";
+import React from 'react';
+import {
+  MentorsPageContainer,
+  MentorsPageHeading,
+} from './mentor-styles';
 
 const MentorsPage = () => {
   return (

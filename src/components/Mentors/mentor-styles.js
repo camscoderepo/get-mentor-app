@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MentorsPageContainer = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #f2f2f2;
+  background: #fff;
   height: 100vh;
 `;
 

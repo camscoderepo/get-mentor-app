@@ -29,15 +29,14 @@ export const StyledCheckbox = styled.div`
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: ${(props) =>
-    props.checked ? 'rgba(245, 195, 65, 0.80)' : 'white'};
+  background: ${(props) => (props.checked ? 'white' : 'white')};
   border-radius: 3px;
   transition: all 150ms;
   border: 1px solid #000;
 
-  ${HiddenCheckbox}:focus + & {
+  /* ${HiddenCheckbox}:focus + & {
     box-shadow: 0 0 0 3px #f5c341;
-  }
+  } */
 
   ${Icon} {
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};

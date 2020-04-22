@@ -36,23 +36,3 @@ export const InputContainer = styled.div`
     `}
   }
 `;
-
-// export const EyeIconImg = styled.img`
-//   position: absolute;
-//   top: 15px;
-//   right: 15px;
-//   width: 18px;
-//   height: 18px;
-//   display: none;
-
-//   ${(props) =>
-//     props.showEye &&
-//     `
-//     position: absolute;
-//     top: 15px;
-//     right: 15px;
-//     width: 18px;
-//     height: 18px;
-//     display: none;
-//   `}
-// `;

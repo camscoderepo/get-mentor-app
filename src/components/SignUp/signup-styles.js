@@ -5,9 +5,7 @@ export const SignUpWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding-top: 8%; */
   height: 100vh;
-  /* background-color: grey; */
 `;
 
 export const FormWrapper = styled.form`

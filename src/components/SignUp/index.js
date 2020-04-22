@@ -138,7 +138,7 @@ const SignUpHooks = (props) => {
       </CheckboxWrapper>
       {/* <Errors>{}</Errors> */}
       <Button type="submit" disabled={isValid}>
-        Sign Up
+        Register me!
       </Button>
     </FormWrapper>
   );

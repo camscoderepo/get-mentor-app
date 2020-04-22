@@ -34,10 +34,6 @@ export const StyledCheckbox = styled.div`
   transition: all 150ms;
   border: 1px solid #000;
 
-  /* ${HiddenCheckbox}:focus + & {
-    box-shadow: 0 0 0 3px #f5c341;
-  } */
-
   ${Icon} {
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
   }

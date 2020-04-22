@@ -52,6 +52,9 @@ const SignUpHooks = (props) => {
             email,
           })
           .then(() => {
+            return props.firebase.doSendEmailVerification();
+          })
+          .then(() => {
             setEmail('');
             setPasswordOne('');
             props.history.push(ROUTES.HOME);

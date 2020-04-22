@@ -5,7 +5,7 @@ export const InputContainer = styled.div`
   flex-direction: column;
   margin: 15px 0;
   position: relative;
-  margin-top: 30px;
+  margin-top: 25px;
 
   & > input {
     border: 1px solid #eee;

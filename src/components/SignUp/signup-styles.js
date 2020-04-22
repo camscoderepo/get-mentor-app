@@ -25,7 +25,7 @@ export const Errors = styled.div`
 `;
 
 export const Button = styled.button`
-  height: 30px;
+  height: 42px;
   min-width: 150px;
   border-radius: 10px;
   border: none;
@@ -51,9 +51,14 @@ export const PasswordWrapper = styled.div`
 
 export const EyeIconImg = styled.img`
   position: absolute;
-  top: 42px;
+  top: 38px;
   right: -23px;
   width: 18px;
   height: 18px;
   cursor: pointer;
+`;
+
+export const CheckboxWrapper = styled.div`
+  margin-top: 24px;
+  margin-bottom: 36px;
 `;

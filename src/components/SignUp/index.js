@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import { validateEmail } from '../../utils/ValidateEmail';
+import CheckBox from '../Checkbox';
 import {
   FormWrapper,
   Button,
@@ -11,6 +12,7 @@ import {
   EyeIconImg,
   PasswordWrapper,
   SignUpWrapper,
+  CheckboxWrapper,
 } from './signup-styles';
 import EyeIcon from '../../assets/images/eye.png';
 // import usePasswordValidator from '../PasswordValidator';
@@ -32,11 +34,7 @@ const SignUpHooks = (props) => {
   const [passwordOne, setPasswordOne] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
-
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(username, passwordOne, email);
-  // };
+  const [checked, setChecked] = useState(false);
 
   const onSubmit = (event) => {
     props.firebase
@@ -46,12 +44,10 @@ const SignUpHooks = (props) => {
         props.firebase
           .user(authUser.user.uid)
           .set({
-            username,
             email,
           })
           .then(() => {
             setEmail('');
-            setUserName('');
             setPasswordOne('');
             props.history.push(ROUTES.HOME);
           })
@@ -105,15 +101,11 @@ const SignUpHooks = (props) => {
     setPasswordOne(e.target.value);
   };
 
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+  };
   return (
     <FormWrapper onSubmit={onSubmit}>
-      <InputFloatLabel
-        name="username"
-        label="Username"
-        type="text"
-        value={username}
-        onChange={handleUserName}
-      />
       <InputFloatLabel
         name="email"
         label="Email"
@@ -133,6 +125,17 @@ const SignUpHooks = (props) => {
         />
         <EyeIconImg src={EyeIcon} onClick={togglePasswordVisiblity} />
       </PasswordWrapper>
+      <CheckboxWrapper>
+        <label>
+          <CheckBox
+            checked={checked}
+            onChange={handleCheckboxChange}
+          />
+          <span style={{ marginLeft: 8 }}>
+            Register me as a Mentor
+          </span>
+        </label>
+      </CheckboxWrapper>
       {/* <Errors>{}</Errors> */}
       <Button type="submit" disabled={isValid}>
         Sign Up

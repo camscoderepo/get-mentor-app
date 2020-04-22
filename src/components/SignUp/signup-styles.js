@@ -28,9 +28,10 @@ export const Button = styled.button`
   border-radius: 10px;
   border: none;
   background-color: #f5c341;
-  font-weight: bold;
+  font-weight: 'semi-bold';
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
+  font-family: 'Inter';
   cursor: pointer;
   color: white;
 

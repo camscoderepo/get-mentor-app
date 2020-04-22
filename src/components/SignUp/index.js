@@ -14,10 +14,12 @@ import {
   SignUpWrapper,
   CheckboxWrapper,
   GoogleSignUpBtn,
-  Span,
+  RegisterImg,
+  ContentWrapper,
 } from './signup-styles';
 import EyeIcon from '../../assets/images/eye.png';
 import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
+import RegisterSvg from '../../assets/svgs/REGISTER.svg';
 // import usePasswordValidator from '../PasswordValidator';
 
 const SignUpPage = () => (
@@ -111,47 +113,55 @@ const SignUpHooks = (props) => {
     setChecked(!checked);
   };
   return (
-    <FormWrapper onSubmit={onSubmit}>
-      <InputFloatLabel
-        name="email"
-        label="Email"
-        type="email"
-        value={email}
-        onChange={handleEmail}
-      />
-      {/* <Errors>{emailError}</Errors> */}
-      <PasswordWrapper>
+    <ContentWrapper>
+      <FormWrapper onSubmit={onSubmit}>
         <InputFloatLabel
-          name="passwordOne"
-          label="Password"
-          type={showPassword ? 'text' : 'password'}
-          showEye={showEye}
-          value={passwordOne}
-          onChange={handlePassword}
+          name="email"
+          label="Email"
+          type="email"
+          value={email}
+          onChange={handleEmail}
         />
-        <EyeIconImg src={EyeIcon} onClick={togglePasswordVisiblity} />
-      </PasswordWrapper>
-      <CheckboxWrapper>
-        <label>
-          <CheckBox
-            checked={checked}
-            onChange={handleCheckboxChange}
+        {/* <Errors>{emailError}</Errors> */}
+        <PasswordWrapper>
+          <InputFloatLabel
+            name="passwordOne"
+            label="Password"
+            type={showPassword ? 'text' : 'password'}
+            showEye={showEye}
+            value={passwordOne}
+            onChange={handlePassword}
           />
-          <span style={{ marginLeft: 8 }}>
-            Register me as a Mentor
-          </span>
-        </label>
-      </CheckboxWrapper>
-      {/* <Errors>{}</Errors> */}
-      <Button type="submit" disabled={isValid}>
-        Register me!
-      </Button>
-      <span style={{ textAlign: 'center', marginTop: 40 }}>Or</span>
-      <GoogleSignUpBtn
-        src={GoogleSignUp}
-        onClick={handleGoogleClicked}
-      />
-    </FormWrapper>
+          <EyeIconImg
+            src={EyeIcon}
+            onClick={togglePasswordVisiblity}
+          />
+        </PasswordWrapper>
+        <CheckboxWrapper>
+          <label>
+            <CheckBox
+              checked={checked}
+              onChange={handleCheckboxChange}
+            />
+            <span style={{ marginLeft: 8 }}>
+              Register me as a Mentor
+            </span>
+          </label>
+        </CheckboxWrapper>
+        {/* <Errors>{}</Errors> */}
+        <Button type="submit" disabled={isValid}>
+          Register me!
+        </Button>
+        <span style={{ textAlign: 'center', marginTop: 40 }}>Or</span>
+        <GoogleSignUpBtn
+          src={GoogleSignUp}
+          onClick={handleGoogleClicked}
+        />
+      </FormWrapper>
+      <div>
+        <RegisterImg src={RegisterSvg} />
+      </div>
+    </ContentWrapper>
   );
 };
 

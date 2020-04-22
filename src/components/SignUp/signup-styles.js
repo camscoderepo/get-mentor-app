@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const SignUpWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 60px;
+  /* justify-content: center;
+  align-items: center; */
+  /* height: 100vh; */
 `;
 
 export const FormWrapper = styled.form`
@@ -66,7 +67,11 @@ export const GoogleSignUpBtn = styled.img`
   margin-top: 40px;
   cursor: pointer;
 `;
-
-export const Span = styled.span`
-  text-align: center;
+export const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`;
+export const RegisterImg = styled.img`
+  max-width: 80%;
+  padding-left: 50%;
 `;

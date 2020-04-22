@@ -8,7 +8,7 @@ export const InputContainer = styled.div`
   margin-top: 25px;
 
   & > input {
-    border: 1px solid #eee;
+    border: 1px solid #000;
     border-radius: 0.25rem;
     background-color: transparent;
     outline: none;

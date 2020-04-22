@@ -71,7 +71,9 @@ const SignUpHooks = (props) => {
     setShowPassword(!showPassword);
   };
   const handleGoogleClicked = () => {
-    alert('NOT SO FAST WE STILL NEED CODE HA HA!!!!');
+    alert(
+      'Hey Bruno Thanks for helping me become a better frontend developer!!!',
+    );
   };
 
   // useEffect(() => {

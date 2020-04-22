@@ -61,3 +61,11 @@ export const CheckboxWrapper = styled.div`
   margin-top: 24px;
   margin-bottom: 36px;
 `;
+
+export const GoogleSignUpBtn = styled.img`
+  margin-top: 40px;
+`;
+
+export const Span = styled.span`
+  text-align: center;
+`;

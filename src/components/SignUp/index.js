@@ -13,8 +13,11 @@ import {
   PasswordWrapper,
   SignUpWrapper,
   CheckboxWrapper,
+  GoogleSignUpBtn,
+  Span,
 } from './signup-styles';
 import EyeIcon from '../../assets/images/eye.png';
+import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
 // import usePasswordValidator from '../PasswordValidator';
 
 const SignUpPage = () => (
@@ -140,6 +143,8 @@ const SignUpHooks = (props) => {
       <Button type="submit" disabled={isValid}>
         Register me!
       </Button>
+      <span style={{ textAlign: 'center', marginTop: 40 }}>Or</span>
+      <GoogleSignUpBtn src={GoogleSignUp} />
     </FormWrapper>
   );
 };

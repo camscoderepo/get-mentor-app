@@ -64,6 +64,7 @@ export const CheckboxWrapper = styled.div`
 
 export const GoogleSignUpBtn = styled.img`
   margin-top: 40px;
+  cursor: pointer;
 `;
 
 export const Span = styled.span`

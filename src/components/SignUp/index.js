@@ -68,6 +68,9 @@ const SignUpHooks = (props) => {
   const togglePasswordVisiblity = () => {
     setShowPassword(!showPassword);
   };
+  const handleGoogleClicked = () => {
+    alert('NOT SO FAST WE STILL NEED CODE HA HA!!!!');
+  };
 
   // useEffect(() => {
   //   if (!state.email) {
@@ -144,7 +147,10 @@ const SignUpHooks = (props) => {
         Register me!
       </Button>
       <span style={{ textAlign: 'center', marginTop: 40 }}>Or</span>
-      <GoogleSignUpBtn src={GoogleSignUp} />
+      <GoogleSignUpBtn
+        src={GoogleSignUp}
+        onClick={handleGoogleClicked}
+      />
     </FormWrapper>
   );
 };

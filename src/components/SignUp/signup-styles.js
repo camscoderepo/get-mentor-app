@@ -64,7 +64,7 @@ export const CheckboxWrapper = styled.div`
 `;
 
 export const GoogleSignUpBtn = styled.img`
-  margin-top: 40px;
+  /* margin-top: 40px; */
   cursor: pointer;
 `;
 export const ContentWrapper = styled.div`
@@ -74,4 +74,10 @@ export const ContentWrapper = styled.div`
 export const RegisterImg = styled.img`
   max-width: 80%;
   padding-left: 50%;
+`;
+
+export const GoogleBtnWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 `;

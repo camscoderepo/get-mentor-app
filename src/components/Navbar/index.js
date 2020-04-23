@@ -1,5 +1,7 @@
 import React from 'react';
 import { AuthUserContext } from '../Session';
+import * as ROUTES from '../../constants/routes';
+import * as ROLES from '../../constants/roles';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
 import { ReactComponent as MobileLogo } from '../../assets/svgs/mobile-logo.svg';
@@ -14,8 +16,6 @@ import {
 } from './navbar-styles';
 import SignOutButton from '../SignOut';
 
-import * as ROUTES from '../../constants/routes';
-
 const linkStyle = {
   color: 'black',
   fontfamily: 'Inter',
@@ -29,12 +29,16 @@ const Navbar = ({ authUser }) => (
   <div>
     <AuthUserContext.Consumer>
       {(authUser) =>
-        authUser ? <NavigationAuth /> : <NavigationNonAuth />
+        authUser ? (
+          <NavigationAuth authUser={authUser} />
+        ) : (
+          <NavigationNonAuth />
+        )
       }
     </AuthUserContext.Consumer>
   </div>
 );
-const NavigationAuth = () => {
+const NavigationAuth = ({ authUser }) => {
   return (
     <div>
       <MobileLogoWrapper>
@@ -66,9 +70,11 @@ const NavigationAuth = () => {
               </Link>
             </NavLinkWrapper>
             <NavLinkWrapper>
-              <Link style={linkStyle} to={ROUTES.ADMIN}>
-                Admin
-              </Link>
+              {!!authUser.roles[ROLES.MENTOR] && (
+                <Link style={linkStyle} to={ROUTES.ADMIN}>
+                  Mentor Admin
+                </Link>
+              )}
             </NavLinkWrapper>
             <NavLinkWrapper>
               <SignOutButton />

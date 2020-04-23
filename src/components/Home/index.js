@@ -1,6 +1,8 @@
 import React from 'react';
 // import React, { useState, useEffect } from 'react';
 import { HomePageContainer, HomePageHeading } from './home-styles';
+import { compose } from 'recompose';
+import { withAuthorization, withEmailVerification } from '../Session';
 // import { FirebaseContext } from '../Firebase';
 // import axios from "axios";
 // import Topic from "../../components/topic/topic";
@@ -30,10 +32,15 @@ const HomePage = () => {
     <div>
       <HomePageContainer>
         <HomePageHeading>
-          Nam Jai Means Helping People
+          The Home Page is accessible by every signed in user
         </HomePageHeading>
       </HomePageContainer>
     </div>
   );
 };
-export default HomePage;
+
+const condition = (authUser) => !!authUser;
+export default compose(
+  withEmailVerification,
+  withAuthorization(condition),
+)(HomePage);

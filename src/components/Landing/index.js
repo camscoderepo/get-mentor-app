@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
+import {
+  LandingPageContainer,
+  LandingPageHeading,
+} from './landing-styles';
 
-const Landing = () => (
-  <div>
-    <h1>Landing</h1>
-  </div>
+const LandingPage = () => (
+  <LandingPageContainer>
+    <LandingPageHeading>Landing Page</LandingPageHeading>
+  </LandingPageContainer>
 );
 
-export default Landing;
+export default LandingPage;

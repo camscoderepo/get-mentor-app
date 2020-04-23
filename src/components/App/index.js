@@ -9,6 +9,7 @@ import AboutPage from '../About';
 import MentorsPage from '../Mentors';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
+import LandingPage from '../Landing';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
@@ -16,6 +17,7 @@ const App = () => (
   <Router>
     <Navbar />
     <div className="container">
+      <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route exact path={ROUTES.HOME} component={HomePage} />
       <Route exact path={ROUTES.ABOUT} component={AboutPage} />
       <Route exact path={ROUTES.MENTORS} component={MentorsPage} />

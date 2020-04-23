@@ -42,23 +42,23 @@ const NavigationAuth = ({ authUser }) => {
   return (
     <div>
       <MobileLogoWrapper>
-        <Link to={ROUTES.HOME}>
+        <Link to={ROUTES.LANDING}>
           <MobileLogo />
         </Link>
       </MobileLogoWrapper>
       <Header>
         <NavContainer>
           <LogoWrapper>
-            <Link to={ROUTES.HOME}>
+            <Link to={ROUTES.LANDING}>
               <Logo />
             </Link>
           </LogoWrapper>
           <NavLinkContainer>
-            {/* <NavLinkWrapper>
-              <Link style={linkStyle} to={ROUTES.ABOUT}>
-                About
+            <NavLinkWrapper>
+              <Link style={linkStyle} to={ROUTES.HOME}>
+                Home
               </Link>
-            </NavLinkWrapper> */}
+            </NavLinkWrapper>
             <NavLinkWrapper>
               <Link style={linkStyle} to={ROUTES.MENTORS}>
                 Mentors
@@ -89,18 +89,23 @@ const NavigationNonAuth = () => {
   return (
     <div>
       <MobileLogoWrapper>
-        <Link to={ROUTES.HOME}>
+        <Link to={ROUTES.LANDING}>
           <MobileLogo />
         </Link>
       </MobileLogoWrapper>
       <Header>
         <NavContainer>
           <LogoWrapper>
-            <Link to={ROUTES.HOME}>
+            <Link to={ROUTES.LANDING}>
               <Logo />
             </Link>
           </LogoWrapper>
           <NavLinkContainer>
+            <NavLinkWrapper>
+              <Link style={linkStyle} to={ROUTES.HOME}>
+                Home
+              </Link>
+            </NavLinkWrapper>
             <NavLinkWrapper>
               <Link style={linkStyle} to={ROUTES.MENTORS}>
                 Mentors

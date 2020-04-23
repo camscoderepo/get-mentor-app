@@ -10,4 +10,9 @@ const HomePage = () => {
     </div>
   );
 };
-export default HomePage;
+
+const condition = (authUser) => !!authUser;
+export default compose(
+  withEmailVerification,
+  withAuthorization(condition),
+)(HomePage);

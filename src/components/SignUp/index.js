@@ -34,7 +34,18 @@ const SignUpPage = () => (
   </div>
 );
 
+const ERROR_CODE_ACCOUNT_EXISTS = 'auth/email-already-in-use';
+
+const ERROR_MSG_ACCOUNT_EXISTS = `
+  An account with this E-Mail address already exists.
+  Try to login with this account instead. If you think the
+  account is already used from one of the social logins, try
+  to sign in with one of them. Afterward, associate your accounts
+  on your personal account page.
+`;
+
 const SignUpHooks = (props) => {
+  console.log(props);
   const [isValid, setIsValid] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [isMentor, setIsMentor] = useState(false);
@@ -59,6 +70,9 @@ const SignUpHooks = (props) => {
           .set({
             email,
             roles,
+          })
+          .then(() => {
+            return this.props.firebase.doSendEmailVerification();
           })
           .then(() => {
             setEmail('');
@@ -187,6 +201,9 @@ const SignUpGoogleBase = (props) => {
         props.history.push(ROUTES.HOME);
       })
       .catch((error) => {
+        if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
+          error.message = ERROR_MSG_ACCOUNT_EXISTS;
+        }
         setError(error);
       });
   };

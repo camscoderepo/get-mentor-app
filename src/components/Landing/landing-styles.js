@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HomePageContainer = styled.main`
+export const LandingPageContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@ export const HomePageContainer = styled.main`
   height: 100vh;
 `;
 
-export const HomePageHeading = styled.h1`
+export const LandingPageHeading = styled.h1`
   font-size: 60px;
   font-family: Mr Eaves Mod OT;
   font-weight: 300;

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const MentorsPageContainer = styled.main`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: #fff;
+  align-items: center;
+  background: white;
   height: 100vh;
 `;
 

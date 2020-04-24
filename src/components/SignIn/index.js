@@ -105,7 +105,7 @@ class SignInGoogleBase extends Component {
         return this.props.firebase.user(socialAuthUser.user.uid).set({
           username: socialAuthUser.user.displayName,
           email: socialAuthUser.user.email,
-          roles: {},
+          roles: [],
         });
       })
       .then((socialAuthUser) => {

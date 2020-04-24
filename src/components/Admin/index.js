@@ -4,7 +4,7 @@ import { withFirebase } from '../Firebase';
 import { withAuthorization, withEmailVerification } from '../Session';
 import * as ROLES from '../../constants/roles';
 
-class AdminPage extends Component {
+class MentorAdminPage extends Component {
   constructor(props) {
     super(props);
 
@@ -65,18 +65,16 @@ const UserList = ({ users }) => (
         <span>
           <strong>E-Mail:</strong> {user.email}
         </span>
-        <span>
-          <strong>Is-Mentor:</strong> {user.isMentor}
-        </span>
       </li>
     ))}
   </ul>
 );
 
 const condition = (authUser) =>
-  authUser && !!authUser.roles[ROLES.MENTOR];
+  authUser && authUser.roles.includes(ROLES.MENTOR);
+
 export default compose(
   withEmailVerification,
   withAuthorization(condition),
   withFirebase,
-)(AdminPage);
+)(MentorAdminPage);

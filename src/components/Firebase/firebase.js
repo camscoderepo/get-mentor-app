@@ -16,7 +16,7 @@ const config = {
 class Firebase {
   constructor() {
     app.initializeApp(config);
-    this.emailAuthProvider = app.auth.EmailAuthProvider;
+    // this.emailAuthProvider = app.auth.EmailAuthProvider;
     this.auth = app.auth();
     this.db = app.database();
 
@@ -30,11 +30,6 @@ class Firebase {
   doSignInWithEmailAndPassword = (email, password) =>
     this.auth.signInWithEmailAndPassword(email, password);
 
-  doSendEmailVerification = () =>
-    this.auth.currentUser.sendEmailVerification({
-      url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
-    });
-
   doSignInWithGoogle = () =>
     this.auth.signInWithPopup(this.googleProvider);
 
@@ -42,6 +37,11 @@ class Firebase {
 
   doPasswordReset = (email) =>
     this.auth.sendPasswordResetEmail(email);
+
+  doSendEmailVerification = () =>
+    this.auth.currentUser.sendEmailVerification({
+      url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
+    });
 
   doPasswordUpdate = (password) =>
     this.auth.currentUser.updatePassword(password);

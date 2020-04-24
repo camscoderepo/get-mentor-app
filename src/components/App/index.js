@@ -7,7 +7,7 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import MentorsPage from '../Mentors';
 import AccountPage from '../Account';
-import AdminPage from '../Admin';
+import MentorAdminPage from '../Admin';
 import LandingPage from '../Landing';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -17,17 +17,16 @@ const App = () => (
     <Navbar />
     <div className="container">
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
-      <Route exact path={ROUTES.HOME} component={HomePage} />
-      <Route exact path={ROUTES.MENTORS} component={MentorsPage} />
-      <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
-      <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
+      <Route path={ROUTES.HOME} component={HomePage} />
+      <Route path={ROUTES.MENTORS} component={MentorsPage} />
+      <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+      <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route
-        exact
         path={ROUTES.PASSWORD_FORGET}
         component={PasswordForgetPage}
       />
-      <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
-      <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+      <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+      <Route path={ROUTES.MENTOR_ADMIN} component={MentorAdminPage} />
     </div>
   </Router>
 );

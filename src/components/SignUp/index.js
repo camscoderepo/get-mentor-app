@@ -8,9 +8,9 @@ import * as ROLES from '../../constants/roles';
 import { validateEmail } from '../../utils/ValidateEmail';
 import CheckBox from '../Checkbox';
 import {
-  FormWrapper,
   Button,
   Errors,
+  FormWrapper,
   EyeIconImg,
   PasswordWrapper,
   SignUpWrapper,
@@ -45,7 +45,6 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
 `;
 
 const SignUpHooks = (props) => {
-  console.log(props);
   const [isValid, setIsValid] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [isMentor, setIsMentor] = useState(false);
@@ -56,35 +55,33 @@ const SignUpHooks = (props) => {
   const [checked, setChecked] = useState(false);
 
   const onSubmit = (event) => {
-    const roles = {};
+    const roles = [];
 
     if (isMentor) {
-      roles[ROLES.MENTOR] = ROLES.MENTOR;
+      roles.push(ROLES.MENTOR);
     }
     props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then((authUser) => {
         // Create a user in your Firebase realtime database
-        props.firebase
-          .user(authUser.user.uid)
-          .set({
-            email,
-            roles,
-          })
-          .then(() => {
-            return this.props.firebase.doSendEmailVerification();
-          })
-          .then(() => {
-            setEmail('');
-            setPasswordOne('');
-            setIsMentor(false);
-            props.history.push(ROUTES.HOME);
-          })
-          .catch((error) => {
-            setError({ error });
-          });
+        return props.firebase.user(authUser.user.uid).set({
+          email,
+          roles,
+        });
+      })
+      .then(() => {
+        return props.firebase.doSendEmailVerification();
+      })
+      .then(() => {
+        setEmail('');
+        setPasswordOne('');
+        setIsMentor(false);
+        props.history.push(ROUTES.HOME);
       })
       .catch((error) => {
+        if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
+          error.message = ERROR_MSG_ACCOUNT_EXISTS;
+        }
         setError({ error });
       });
 
@@ -169,9 +166,7 @@ const SignUpHooks = (props) => {
           </label>
         </CheckboxWrapper>
         {/* <Errors>{}</Errors> */}
-        <Button type="submit" disabled={isValid}>
-          Register me!
-        </Button>
+        <Button type="submit">Register me!</Button>
         <span style={{ textAlign: 'center', marginTop: 40 }}>Or</span>
         <SignUpGoogle />
       </FormWrapper>
@@ -191,9 +186,8 @@ const SignUpGoogleBase = (props) => {
       .then((socialAuthUser) => {
         // Create a user in your Firebase Realtime Database too
         return props.firebase.user(socialAuthUser.user.uid).set({
-          username: socialAuthUser.user.displayName,
           email: socialAuthUser.user.email,
-          roles: {},
+          roles: [],
         });
       })
       .then((socialAuthUser) => {

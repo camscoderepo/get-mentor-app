@@ -69,9 +69,9 @@ const SignUpHooks = (props) => {
           roles,
         });
       })
-      .then(() => {
-        return props.firebase.doSendEmailVerification();
-      })
+      // .then(() => {
+      //   return props.firebase.doSendEmailVerification();
+      // })
       .then(() => {
         setEmail('');
         setPasswordOne('');

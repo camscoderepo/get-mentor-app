@@ -43,8 +43,7 @@ class MentorAdminPage extends Component {
       <div>
         <h1>Mentor Admin</h1>
         <p>
-          The Mentor Admin Page is accessible by every signed in
-          mentor user.
+          The Mentor Admin Page is accessible by signed in mentors.
         </p>
 
         {loading && <div>Loading ...</div>}

@@ -70,6 +70,13 @@ class UserListBase extends Component {
                 <strong>Username:</strong> {user.username}
               </span>
               <span>
+                {user.roles ? (
+                  <strong>Mentor</strong>
+                ) : (
+                  <strong>Student</strong>
+                )}
+              </span>
+              <span>
                 <Link
                   to={{
                     pathname: `${ROUTES.ADMIN}/${user.uid}`,
@@ -94,6 +101,7 @@ class UserItemBase extends Component {
     this.state = {
       loading: false,
       user: null,
+      isMentor: false,
       ...props.location.state,
     };
   }

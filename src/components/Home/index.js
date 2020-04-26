@@ -51,7 +51,6 @@ const RequestsBase = (props) => {
   }, []);
 
   const RequestList = ({ helpRequests }) => {
-    // console.log(helpRequests);
     return (
       <ul>
         {helpRequests.map((request) => (
@@ -62,7 +61,6 @@ const RequestsBase = (props) => {
   };
 
   const RequestItem = ({ request }) => {
-    // console.log(request);
     return (
       <li>
         <strong>USER ID: {request.userId}</strong> Requested:{' '}

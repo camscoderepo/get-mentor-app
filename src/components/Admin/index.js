@@ -70,7 +70,7 @@ const UserList = ({ users }) => (
 );
 
 const condition = (authUser) =>
-  authUser && authUser.roles.includes(ROLES.MENTOR);
+  authUser && !!authUser.roles[ROLES.MENTOR];
 
 export default compose(
   withEmailVerification,

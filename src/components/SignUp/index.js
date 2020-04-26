@@ -55,10 +55,10 @@ const SignUpHooks = (props) => {
   const [checked, setChecked] = useState(false);
 
   const onSubmit = (event) => {
-    const roles = [];
+    const roles = {};
 
     if (isMentor) {
-      roles.push(ROLES.MENTOR);
+      roles[ROLES.MENTOR] = ROLES.MENTOR;
     }
     props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
@@ -187,7 +187,7 @@ const SignUpGoogleBase = (props) => {
         // Create a user in your Firebase Realtime Database too
         return props.firebase.user(socialAuthUser.user.uid).set({
           email: socialAuthUser.user.email,
-          roles: [],
+          roles: {},
         });
       })
       .then((socialAuthUser) => {

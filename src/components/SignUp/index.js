@@ -23,7 +23,7 @@ import {
 import EyeIcon from '../../assets/images/eye.png';
 import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
 import RegisterSvg from '../../assets/svgs/REGISTER.svg';
-// import usePasswordValidator from '../PasswordValidator';
+import usePasswordValidator from '../PasswordValidator';
 
 const SignUpPage = () => (
   <div>
@@ -49,11 +49,30 @@ const SignUpHooks = (props) => {
   const [emailError, setEmailError] = useState('');
   const [isMentor, setIsMentor] = useState(false);
   const [email, setEmail] = useState('');
-  const [passwordOne, setPasswordOne] = useState('');
+  // const [passwordOne, setPasswordOne] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const [checked, setChecked] = useState(false);
+  const [
+    passwordOne,
+    setPasswordOne,
+    passwordError,
+  ] = usePasswordValidator({
+    min: 6,
+    max: 15,
+  });
 
+  useEffect(() => {
+    if (!email) {
+      setEmailError('');
+    } else {
+      if (validateEmail(email)) {
+        setEmailError('');
+      } else {
+        setEmailError('Please enter a valid email.');
+      }
+    }
+  }, [email]);
   const onSubmit = (event) => {
     const roles = {};
 
@@ -92,31 +111,6 @@ const SignUpHooks = (props) => {
     setShowPassword(!showPassword);
   };
 
-  // useEffect(() => {
-  //   if (!state.email) {
-  //     setEmailError('');
-  //   } else {
-  //     if (validateEmail(state.email)) {
-  //       setEmailError('');
-  //     } else {
-  //       setEmailError('Please enter a valid email.');
-  //     }
-  //   }
-  // }, [state.email]);
-
-  // const checkValid = () => {
-  //   if (
-  //     state.passwordOne !== state.passwordTwo ||
-  //     state.passwordOne === '' ||
-  //     state.email === '' ||
-  //     state.username === ''
-  //   ) {
-  //     setIsValid(false);
-  //   } else {
-  //     setIsValid(true);
-  //   }
-  // };
-
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -139,7 +133,7 @@ const SignUpHooks = (props) => {
           value={email}
           onChange={handleEmail}
         />
-        {/* <Errors>{emailError}</Errors> */}
+        <Errors>{emailError}</Errors>
         <PasswordWrapper>
           <InputFloatLabel
             name="passwordOne"
@@ -153,6 +147,7 @@ const SignUpHooks = (props) => {
             onClick={togglePasswordVisiblity}
           />
         </PasswordWrapper>
+        <Errors>{passwordError}</Errors>
         <CheckboxWrapper>
           <label>
             <CheckBox
@@ -166,7 +161,9 @@ const SignUpHooks = (props) => {
           </label>
         </CheckboxWrapper>
         {/* <Errors>{}</Errors> */}
-        <Button type="submit">Register me!</Button>
+        <Button disabled={isValid} type="submit">
+          Register me!
+        </Button>
         <span style={{ textAlign: 'center', marginTop: 40 }}>Or</span>
         <SignUpGoogle />
       </FormWrapper>

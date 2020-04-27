@@ -147,6 +147,11 @@ const NavigationNonAuth = () => {
                 Mentors
               </Link>
             </NavLinkWrapper>
+            <MobileIconWrapper>
+              <Link style={linkStyle} to={ROUTES.ACCOUNT}>
+                <ProfileIcon />
+              </Link>
+            </MobileIconWrapper>
             <NavLinkWrapper>
               <Link style={linkStyle} to={ROUTES.SIGN_IN}>
                 Log In

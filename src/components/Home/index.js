@@ -63,7 +63,7 @@ const RequestsBase = (props) => {
   const RequestItem = ({ request }) => {
     return (
       <li>
-        <strong>USER ID: {request.userId}</strong> Requested:{' '}
+        {/* <strong>USER ID: {request.userId}</strong> Requested:{' '} */}
         {request.requestText}
       </li>
     );

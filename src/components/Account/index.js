@@ -2,20 +2,25 @@ import React from 'react';
 import { AuthUserContext } from '../Session';
 import { compose } from 'recompose';
 import { withAuthorization, withEmailVerification } from '../Session';
-
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
+import {
+  AccountPageContainer,
+  AccountPageHeading,
+} from './account-styles';
 
 const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (
-      <div>
-        <h1>Account: {authUser.email}</h1>
+      <AccountPageContainer>
+        <AccountPageHeading>
+          Account: {authUser.email}
+        </AccountPageHeading>
         <h4>Change Password</h4>
         <PasswordChangeForm />
         <h4>Forgot Password</h4>
         <PasswordForgetForm />
-      </div>
+      </AccountPageContainer>
     )}
   </AuthUserContext.Consumer>
 );

@@ -9,6 +9,7 @@ import MentorsPage from '../Mentors';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import LandingPage from '../Landing';
+import Footer from '../Footer';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
@@ -28,6 +29,7 @@ const App = () => (
       <Route path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route path={ROUTES.ADMIN} component={AdminPage} />
     </div>
+    <Footer />
   </Router>
 );
 

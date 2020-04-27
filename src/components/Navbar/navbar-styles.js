@@ -67,6 +67,7 @@ export const NavLinkWrapper = styled.div`
   margin-left: 31px;
   @media screen and (max-width: 600px) {
     margin: 0;
+    display: none;
   }
 `;
 
@@ -83,4 +84,28 @@ export const RegisterBtn = styled.div`
   line-height: 140%;
   text-align: center;
   margin-left: 31px;
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+    display: none;
+  }
+`;
+
+export const MobileIconWrapper = styled.div`
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+`;
+
+export const MobileSignInWrapper = styled.div`
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    bottom: auto;
+    left: auto;
+  }
 `;

@@ -13,4 +13,8 @@ export const AboutPageHeading = styled.h1`
   font-family: Mr Eaves Mod OT;
   font-weight: 300;
   text-align: center;
+
+  @media screen and (max-width: 600px) {
+    font-size: 25px;
+  }
 `;

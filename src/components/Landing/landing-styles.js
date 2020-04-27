@@ -12,4 +12,8 @@ export const LandingPageHeading = styled.h1`
   font-size: 60px;
   font-family: Mr Eaves Mod OT;
   font-weight: 300;
+
+  @media screen and (max-width: 600px) {
+    font-size: 25px;
+  }
 `;

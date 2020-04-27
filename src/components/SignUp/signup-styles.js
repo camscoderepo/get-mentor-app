@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const SignUpWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 60px;
-  /* justify-content: center;
-  align-items: center; */
-  /* height: 100vh; */
+  padding: 4.2%;
+  margin-bottom: 20%;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 40%;
+  }
 `;
 
 export const FormWrapper = styled.form`
@@ -14,6 +15,11 @@ export const FormWrapper = styled.form`
   flex-direction: column;
   width: 90%;
   max-width: 450px;
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    max-width: 80%;
+  }
 `;
 
 export const Errors = styled.div`
@@ -64,16 +70,35 @@ export const CheckboxWrapper = styled.div`
 `;
 
 export const GoogleSignUpBtn = styled.img`
-  /* margin-top: 40px; */
   cursor: pointer;
 `;
 export const ContentWrapper = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 `;
+
+export const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+`;
+
 export const RegisterImg = styled.img`
   max-width: 80%;
-  padding-left: 50%;
+  max-height: 95%;
+  margin-top: 3.5%;
 `;
 
 export const GoogleBtnWrapper = styled.div`
@@ -81,3 +106,5 @@ export const GoogleBtnWrapper = styled.div`
   justify-content: center;
   margin-top: 40px;
 `;
+
+//  @media screen and (max-width: 600px) {}

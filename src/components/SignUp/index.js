@@ -19,6 +19,7 @@ import {
   RegisterImg,
   ContentWrapper,
   GoogleBtnWrapper,
+  ImgWrapper,
 } from './signup-styles';
 import EyeIcon from '../../assets/images/eye.png';
 import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
@@ -28,7 +29,6 @@ import usePasswordValidator from '../PasswordValidator';
 const SignUpPage = () => (
   <div>
     <SignUpWrapper>
-      <h1>Register</h1>
       <SignUpForm />
     </SignUpWrapper>
   </div>
@@ -126,6 +126,7 @@ const SignUpHooks = (props) => {
   return (
     <ContentWrapper>
       <FormWrapper onSubmit={onSubmit}>
+        <h1>Register</h1>
         <InputFloatLabel
           name="email"
           label="Email"
@@ -167,9 +168,9 @@ const SignUpHooks = (props) => {
         <span style={{ textAlign: 'center', marginTop: 40 }}>Or</span>
         <SignUpGoogle />
       </FormWrapper>
-      <div>
+      <ImgWrapper>
         <RegisterImg src={RegisterSvg} />
-      </div>
+      </ImgWrapper>
     </ContentWrapper>
   );
 };

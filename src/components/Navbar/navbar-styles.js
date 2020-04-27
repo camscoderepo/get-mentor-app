@@ -8,7 +8,8 @@ export const Header = styled.header`
   bottom: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  /* background-color: #0f94d8; */
+  z-index: 600;
+  background-color: white;
 
   /* medaia queries */
   @media screen and (max-width: 600px) {
@@ -27,7 +28,7 @@ export const NavContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 60px 0 60px;
+  padding: 0 4.2% 0 4.2%;
   @media screen and (max-width: 600px) {
     padding: 20px;
   }
@@ -43,7 +44,7 @@ export const MobileLogoWrapper = styled.div`
   display: none;
   @media screen and (max-width: 600px) {
     display: block;
-    position: fixed;
+    position: absolute;
     top: 16px;
     left: 16px;
     bottom: auto;

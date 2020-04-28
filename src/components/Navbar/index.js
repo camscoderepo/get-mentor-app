@@ -108,7 +108,7 @@ const NavigationNonAuth = () => {
       </MobileLogoWrapper>
       <MobileSignInWrapper>
         <Link style={logInStyle} to={ROUTES.SIGN_IN}>
-          Log Init
+          Log In
         </Link>
       </MobileSignInWrapper>
       <Header>

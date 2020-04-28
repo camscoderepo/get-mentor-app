@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import {
-  LandingPageContainer,
-  LandingPageHeading,
-} from './landing-styles';
 import Button from '../Button';
+import PageContainer from '../PageContainer';
+import HeadingOne from '../Heading';
 
 const linkStyle = { color: 'black' };
 
 const LandingPage = () => (
-  <LandingPageContainer>
-    <LandingPageHeading>Landing Page</LandingPageHeading>
+  <PageContainer>
+    <HeadingOne>Landing Page</HeadingOne>
     <Button inverse big hidemobile>
       <Link style={linkStyle} to={ROUTES.SIGN_UP}>
         {' '}
@@ -24,7 +22,7 @@ const LandingPage = () => (
         Register Me
       </Link>
     </Button>
-  </LandingPageContainer>
+  </PageContainer>
 );
 
 export default LandingPage;

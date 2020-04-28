@@ -8,7 +8,7 @@ import * as ROLES from '../../constants/roles';
 import { validateEmail } from '../../utils/ValidateEmail';
 import CheckBox from '../Checkbox';
 import {
-  Button,
+  // Button,
   Errors,
   FormWrapper,
   EyeIconImg,
@@ -25,6 +25,13 @@ import EyeIcon from '../../assets/images/eye.png';
 import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
 import RegisterSvg from '../../assets/svgs/REGISTER.svg';
 import usePasswordValidator from '../PasswordValidator';
+import Button from '../Button';
+
+const regBtnStyle = {
+  width: '100%',
+  height: 42,
+  margin: 0,
+};
 
 const SignUpPage = () => (
   <div>
@@ -162,7 +169,7 @@ const SignUpHooks = (props) => {
           </label>
         </CheckboxWrapper>
         {/* <Errors>{}</Errors> */}
-        <Button disabled={isValid} type="submit">
+        <Button style={regBtnStyle} primary type="submit">
           Register me!
         </Button>
         <span style={{ textAlign: 'center', marginTop: 40 }}>Or</span>

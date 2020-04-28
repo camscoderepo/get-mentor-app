@@ -29,28 +29,6 @@ export const Errors = styled.div`
   font-size: 13px;
 `;
 
-export const Button = styled.button`
-  height: 42px;
-  min-width: 150px;
-  border-radius: 10px;
-  border: none;
-  background-color: #f5c341;
-  font-weight: 'semi-bold';
-  text-transform: uppercase;
-  font-size: 18px;
-  font-family: 'Inter';
-  cursor: pointer;
-  color: white;
-
-  &:hover {
-    background-color: rgb(128, 181, 250);
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-`;
 export const PasswordWrapper = styled.div`
   position: relative;
 `;

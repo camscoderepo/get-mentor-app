@@ -1,12 +1,13 @@
-import React from "react";
-import { AboutPageContainer, AboutPageHeading } from "./about-styles";
+import React from 'react';
+import PageContainer from '../PageContainer';
+import HeadingOne from '../Heading';
 
 const AboutPage = () => {
   return (
     <div>
-      <AboutPageContainer>
-        <AboutPageHeading>About Page</AboutPageHeading>
-      </AboutPageContainer>
+      <PageContainer>
+        <HeadingOne>About Page</HeadingOne>
+      </PageContainer>
     </div>
   );
 };

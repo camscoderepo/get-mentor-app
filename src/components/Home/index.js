@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { compose } from 'recompose';
+import { withFirebase } from '../Firebase';
 import {
   withAuthorization,
   withEmailVerification,
   AuthUserContext,
 } from '../Session';
 
-import { HomePageContainer, HomePageHeading } from './home-styles';
-import { withFirebase } from '../Firebase';
+import { HomePageHeading } from './home-styles';
+import PageContainer from '../PageContainer';
+import HeadingOne from '../Heading';
 
 const HomePage = () => {
   return (
     <div>
-      <HomePageContainer>
-        <HomePageHeading>
+      <PageContainer>
+        <HeadingOne>
           Home Page is accessible by signed in user
-        </HomePageHeading>
+        </HeadingOne>
         <HelpRequests />
-      </HomePageContainer>
+      </PageContainer>
     </div>
   );
 };

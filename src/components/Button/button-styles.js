@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
+import * as COLORS from '../../constants/colors';
 
 export const StyledButton = styled.button`
   border-radius: 4px;
   background-color: ${(props) =>
-    props.primary ? '#f5c341' : '#ffffff'};
+    props.primary ? COLORS.PRIMARY : '#ffffff'};
   color: black;
   padding: 12px 14px;
   font-size: ${(props) => (props.big ? '18px' : '14px')};
@@ -46,4 +47,13 @@ export const StyledButton = styled.button`
       `
     );
   }}
+
+  &:hover {
+    background-color: rgb(128, 181, 250);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;

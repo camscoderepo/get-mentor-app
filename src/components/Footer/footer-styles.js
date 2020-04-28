@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as COLORS from '../../constants/colors';
 
 export const FooterWrapper = styled.div`
   position: fixed;
@@ -8,7 +9,8 @@ export const FooterWrapper = styled.div`
   min-height: 100px;
   max-height: 15%;
   width: 100%;
-  background-color: #f5c341;
+  background-color: ${(props) =>
+    props.primary ? COLORS.PRIMARY : '#ffffff'};
 
   @media screen and (max-width: 600px) {
     display: none;

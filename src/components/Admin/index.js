@@ -5,9 +5,10 @@ import { withFirebase } from '../Firebase';
 import { withAuthorization, withEmailVerification } from '../Session';
 import * as ROLES from '../../constants/roles';
 import * as ROUTES from '../../constants/routes';
+import PageContainer from '../PageContainer';
 
 const AdminPage = () => (
-  <div>
+  <PageContainer>
     <h1>Admin</h1>
     <p>The Admin Page is accessible by signed in Admins.</p>
 
@@ -15,7 +16,7 @@ const AdminPage = () => (
       <Route exact path={ROUTES.USER_DETAILS} component={UserItem} />
       <Route exact path={ROUTES.ADMIN} component={UserList} />
     </Switch>
-  </div>
+  </PageContainer>
 );
 
 class UserListBase extends Component {

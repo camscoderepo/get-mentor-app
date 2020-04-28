@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
 import { ReactComponent as MobileLogo } from '../../assets/svgs/mobile-logo.svg';
 import Button from '../Button';
+import * as COLORS from '../../constants/colors';
 
 import {
   Header,
@@ -32,7 +33,7 @@ const regBtnStyle = {
 };
 
 const logInStyle = {
-  color: '#f5c341',
+  color: COLORS.PRIMARY,
 };
 
 const Navbar = ({ authUser }) => (

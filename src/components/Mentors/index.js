@@ -1,15 +1,14 @@
 import React from 'react';
-import {
-  MentorsPageContainer,
-  MentorsPageHeading,
-} from './mentor-styles';
+import { MentorsPageHeading } from './mentor-styles';
+import PageContainer from '../PageContainer';
+import HeadingOne from '../Heading';
 
 const MentorsPage = () => {
   return (
     <div>
-      <MentorsPageContainer>
-        <MentorsPageHeading>Mentors Page</MentorsPageHeading>
-      </MentorsPageContainer>
+      <PageContainer>
+        <HeadingOne>Mentors Page</HeadingOne>
+      </PageContainer>
     </div>
   );
 };

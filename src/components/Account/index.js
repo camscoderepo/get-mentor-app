@@ -4,23 +4,18 @@ import { compose } from 'recompose';
 import { withAuthorization, withEmailVerification } from '../Session';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
-import {
-  AccountPageContainer,
-  AccountPageHeading,
-} from './account-styles';
-
+import PageContainer from '../PageContainer';
+import HeadingOne from '../Heading';
 const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (
-      <AccountPageContainer>
-        <AccountPageHeading>
-          Account: {authUser.email}
-        </AccountPageHeading>
+      <PageContainer>
+        <HeadingOne>Account: {authUser.email}</HeadingOne>
         <h4>Change Password</h4>
         <PasswordChangeForm />
         <h4>Forgot Password</h4>
         <PasswordForgetForm />
-      </AccountPageContainer>
+      </PageContainer>
     )}
   </AuthUserContext.Consumer>
 );

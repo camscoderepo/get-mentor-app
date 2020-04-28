@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <div>
-      <FooterWrapper>
+      <FooterWrapper primary>
         <FooterNavContainer>
           <FooterLogoWrapper>
             <FooterLogo />

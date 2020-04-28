@@ -10,12 +10,14 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import LandingPage from '../Landing';
 import Footer from '../Footer';
+import Tabbar from '../Tabbar';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
 const App = () => (
   <Router>
     <Navbar />
+    <Tabbar />
     <div className="container">
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route path={ROUTES.HOME} component={HomePage} />

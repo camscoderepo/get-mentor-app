@@ -13,15 +13,7 @@ export const Header = styled.header`
 
   /* medaia queries */
   @media screen and (max-width: 600px) {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: auto;
-    bottom: 0;
-    /* background-color: #0f94d8; */
-    background: #ffffff;
-    box-shadow: 0px 0px 14px rgba(121, 136, 149, 0.25);
-    border-radius: 31px 31px 0px 0px;
+    display: none;
   }
 `;
 export const NavContainer = styled.div`
@@ -29,9 +21,6 @@ export const NavContainer = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 0 4.2% 0 4.2%;
-  @media screen and (max-width: 600px) {
-    padding: 20px;
-  }
 `;
 export const LogoWrapper = styled.div`
   margin-top: 26px;
@@ -58,9 +47,6 @@ export const NavLinkContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 10px;
-  @media screen and (max-width: 600px) {
-    justify-content: space-around;
-  }
 `;
 
 export const NavLinkWrapper = styled.div`

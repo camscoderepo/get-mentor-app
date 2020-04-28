@@ -5,7 +5,8 @@ export const FooterWrapper = styled.div`
   top: auto;
   bottom: 0;
   left: 0;
-  height: 15%;
+  min-height: 100px;
+  max-height: 15%;
   width: 100%;
   background-color: #f5c341;
 

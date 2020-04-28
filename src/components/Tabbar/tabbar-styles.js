@@ -5,6 +5,7 @@ export const TabbarWrapper = styled.div`
   @media screen and (max-width: 600px) {
     display: flex;
     position: fixed;
+    z-index: 605;
     left: 0;
     right: 0;
     top: auto;

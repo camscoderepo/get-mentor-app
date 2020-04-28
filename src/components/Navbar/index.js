@@ -5,6 +5,7 @@ import * as ROLES from '../../constants/roles';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
 import { ReactComponent as MobileLogo } from '../../assets/svgs/mobile-logo.svg';
+import Button from '../Button';
 
 import {
   Header,
@@ -25,6 +26,13 @@ const linkStyle = {
   fontWeight: 600,
   fontSize: 14,
   lineHeight: '140%',
+};
+const regBtnStyle = {
+  marginLeft: 31,
+};
+
+const logInStyle = {
+  color: '#f5c341',
 };
 
 const Navbar = ({ authUser }) => (
@@ -49,7 +57,7 @@ const NavigationAuth = ({ authUser }) => {
         </Link>
       </MobileLogoWrapper>
       <MobileSignInWrapper>
-        <Link to={ROUTES.SIGN_IN}>Log Out</Link>
+        <SignOutButton />
       </MobileSignInWrapper>
       <Header>
         <NavContainer>
@@ -99,7 +107,9 @@ const NavigationNonAuth = () => {
         </Link>
       </MobileLogoWrapper>
       <MobileSignInWrapper>
-        <Link to={ROUTES.SIGN_IN}>Log In</Link>
+        <Link style={logInStyle} to={ROUTES.SIGN_IN}>
+          Log In
+        </Link>
       </MobileSignInWrapper>
       <Header>
         <NavContainer>
@@ -124,11 +134,11 @@ const NavigationNonAuth = () => {
                 Log In
               </Link>
             </NavLinkWrapper>
-            <RegisterBtn>
+            <Button primary style={regBtnStyle}>
               <Link style={linkStyle} to={ROUTES.SIGN_UP}>
                 Register
               </Link>
-            </RegisterBtn>
+            </Button>
           </NavLinkContainer>
         </NavContainer>
       </Header>

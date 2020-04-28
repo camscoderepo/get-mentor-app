@@ -57,33 +57,6 @@ export const NavLinkWrapper = styled.div`
   }
 `;
 
-export const RegisterBtn = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 12px 14px;
-  background: #f5c341;
-  border-radius: 4px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 140%;
-  text-align: center;
-  margin-left: 31px;
-
-  @media screen and (max-width: 600px) {
-    margin: 0;
-    display: none;
-  }
-`;
-
-export const MobileIconWrapper = styled.div`
-  display: none;
-  @media screen and (max-width: 600px) {
-    display: block;
-  }
-`;
-
 export const MobileSignInWrapper = styled.div`
   display: none;
   @media screen and (max-width: 600px) {

@@ -4,15 +4,26 @@ import * as ROUTES from '../../constants/routes';
 import {
   LandingPageContainer,
   LandingPageHeading,
-  LandingRegisterBtn,
 } from './landing-styles';
+import Button from '../Button';
+
+const linkStyle = { color: 'black' };
 
 const LandingPage = () => (
   <LandingPageContainer>
-    <LandingRegisterBtn>
-      <Link to={ROUTES.SIGN_UP}>Register</Link>
-    </LandingRegisterBtn>
     <LandingPageHeading>Landing Page</LandingPageHeading>
+    <Button inverse big hidemobile>
+      <Link style={linkStyle} to={ROUTES.SIGN_UP}>
+        {' '}
+        Register me to start mentoring or ask for help
+      </Link>
+    </Button>
+    <Button primary hidedesktop>
+      <Link style={linkStyle} to={ROUTES.SIGN_UP}>
+        {' '}
+        Register Me
+      </Link>
+    </Button>
   </LandingPageContainer>
 );
 

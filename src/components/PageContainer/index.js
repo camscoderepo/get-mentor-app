@@ -10,6 +10,7 @@ const PageContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     padding: 0;
+    height: auto;
   }
 `;
 

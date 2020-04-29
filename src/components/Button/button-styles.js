@@ -13,7 +13,6 @@ export const StyledButton = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
-  margin: 15px;
 
   ${(props) => {
     return (

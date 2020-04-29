@@ -6,35 +6,19 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
 import { ReactComponent as MobileLogo } from '../../assets/svgs/mobile-logo.svg';
 import Button from '../Button';
-import * as COLORS from '../../constants/colors';
-
 import {
   Header,
   NavContainer,
   LogoWrapper,
   NavLinkContainer,
   NavLinkWrapper,
-  RegisterBtn,
   MobileLogoWrapper,
   MobileSignInWrapper,
+  linkStyle,
+  regBtnStyle,
+  logInStyle,
 } from './navbar-styles';
 import SignOutButton from '../SignOut';
-
-const linkStyle = {
-  color: 'black',
-  fontfamily: 'Inter',
-  fontStyle: 'normal',
-  fontWeight: 600,
-  fontSize: 14,
-  lineHeight: '140%',
-};
-const regBtnStyle = {
-  marginLeft: 31,
-};
-
-const logInStyle = {
-  color: COLORS.PRIMARY,
-};
 
 const Navbar = ({ authUser }) => (
   <div>

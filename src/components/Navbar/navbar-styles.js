@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as COLORS from '../../constants/colors';
 
 export const Header = styled.header`
   position: fixed;
@@ -68,3 +69,19 @@ export const MobileSignInWrapper = styled.div`
     left: auto;
   }
 `;
+
+export const linkStyle = {
+  color: 'black',
+  fontfamily: 'Inter',
+  fontStyle: 'normal',
+  fontWeight: 600,
+  fontSize: 14,
+  lineHeight: '140%',
+};
+export const regBtnStyle = {
+  marginLeft: 31,
+};
+
+export const logInStyle = {
+  color: COLORS.PRIMARY,
+};

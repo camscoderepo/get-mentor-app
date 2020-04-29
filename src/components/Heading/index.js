@@ -21,8 +21,15 @@ const HeadingOne = styled.h1`
   font-weight: bold;
   margin-bottom: 25px;
   ${baseStyle};
-  @media (max-width: 480px) {
-    font-size: 40px;
+
+  @media (max-width: 600px) {
+    font-size: 32px;
+  }
+  @media (max-width: 462px) {
+    font-size: 28px;
+  }
+  @media (max-width: 405px) {
+    font-size: 22px;
   }
 `;
 
@@ -49,7 +56,7 @@ const HeadingFour = styled.h4`
 
 const HeadingFive = styled.h5`
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
   ${baseStyle};
 `;

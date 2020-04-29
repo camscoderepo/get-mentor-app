@@ -9,6 +9,7 @@ export const HeroContainer = styled.div`
   justify-content: space-between;
   padding-left: 60px;
   padding-right: 60px;
+  max-width: 100vw;
   @media screen and (max-width: 1100px) {
     margin-top: 5%;
   }

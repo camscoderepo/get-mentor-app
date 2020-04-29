@@ -55,7 +55,8 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
 
   @media screen and (max-width: 768px) {
-    flex-direction: column-reverse;
+    padding-top: 8%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -67,6 +68,7 @@ export const ImgWrapper = styled.div`
   width: 100%;
 
   @media screen and (max-width: 768px) {
+    margin-top: 40px;
     justify-content: center;
     width: 80%;
   }

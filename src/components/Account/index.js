@@ -6,15 +6,18 @@ import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import PageContainer from '../PageContainer';
 import HeadingOne from '../Heading';
+import { AccountContent } from './account-styles';
 const AccountPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (
       <PageContainer>
-        <HeadingOne>Account: {authUser.email}</HeadingOne>
-        <h4>Change Password</h4>
-        <PasswordChangeForm />
-        <h4>Forgot Password</h4>
-        <PasswordForgetForm />
+        <AccountContent>
+          <HeadingOne>Account: {authUser.email}</HeadingOne>
+          <h4>Change Password</h4>
+          <PasswordChangeForm />
+          <h4>Forgot Password</h4>
+          <PasswordForgetForm />
+        </AccountContent>
       </PageContainer>
     )}
   </AuthUserContext.Consumer>

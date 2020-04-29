@@ -7,7 +7,7 @@ import {
   AuthUserContext,
 } from '../Session';
 
-import { HomePageHeading } from './home-styles';
+import { HomeContent } from './home-styles';
 import PageContainer from '../PageContainer';
 import HeadingOne from '../Heading';
 
@@ -15,10 +15,12 @@ const HomePage = () => {
   return (
     <div>
       <PageContainer>
-        <HeadingOne>
-          Home Page is accessible by signed in user
-        </HeadingOne>
-        <HelpRequests />
+        <HomeContent>
+          <HeadingOne>
+            Home Page is accessible by signed in user
+          </HeadingOne>
+          <HelpRequests />
+        </HomeContent>
       </PageContainer>
     </div>
   );

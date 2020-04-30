@@ -17,18 +17,22 @@ const baseStyle = css`
 `;
 
 const HeadingOne = styled.h1`
-  font-size: 42px;
+  font-size: 64px;
   font-weight: bold;
   margin-bottom: 25px;
   ${baseStyle};
+
+  @media (max-width: 768px) {
+    font-size: 44px;
+  }
 
   @media (max-width: 600px) {
     font-size: 32px;
   }
   @media (max-width: 462px) {
-    font-size: 28px;
+    font-size: 30px;
   }
-  @media (max-width: 405px) {
+  @media (max-width: 320px) {
     font-size: 22px;
   }
 `;

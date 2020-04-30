@@ -2,6 +2,14 @@ import styled from 'styled-components';
 
 export const linkStyle = { color: 'black' };
 export const btnOveride = { margin: '0' };
+export const inverseBtnOveride = {
+  width: 340,
+  fontSize: 14,
+  paddingTop: 12,
+  paddingRight: 14,
+  paddingBottom: 12,
+  PaddingLeft: 14,
+};
 
 export const HeroContainer = styled.div`
   display: flex;
@@ -9,12 +17,15 @@ export const HeroContainer = styled.div`
   justify-content: space-between;
   padding-left: 60px;
   padding-right: 60px;
+  padding-bottom: 70px;
   max-width: 100vw;
   @media screen and (max-width: 1100px) {
     margin-top: 5%;
   }
   @media screen and (max-width: 768px) {
-    margin-top: 10%;
+    margin-top: 15%;
+    padding-left: 4.2%;
+    padding-right: 4.2%;
     flex-direction: column;
     align-items: center;
   }
@@ -31,9 +42,8 @@ export const HeroContainer = styled.div`
 export const HeroContentLeft = styled.div`
   display: flex;
   flex-direction: column;
-  width: 490px;
+  width: 700px;
   max-width: 90%;
-  height: 300px;
   margin-top: 2.2%;
   @media screen and (max-width: 768px) {
     margin-bottom: 64px;

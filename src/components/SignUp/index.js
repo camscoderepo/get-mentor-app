@@ -136,8 +136,8 @@ const SignUpHooks = (props) => {
       <FormWrapper onSubmit={onSubmit}>
         <h1>Register</h1>
         <SignUpText>
-          Fill in the form below to be a mentor, seek for help or
-          both. It’s free. Forever.
+          Fill in the form below to be a mentor, or to seek help. It’s
+          free Forever.
         </SignUpText>
         <InputFloatLabel
           name="email"

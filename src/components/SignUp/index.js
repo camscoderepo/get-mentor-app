@@ -20,6 +20,7 @@ import {
   ContentWrapper,
   GoogleBtnWrapper,
   ImgWrapper,
+  SignUpText,
 } from './signup-styles';
 import EyeIcon from '../../assets/images/eye.png';
 import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
@@ -134,6 +135,10 @@ const SignUpHooks = (props) => {
     <ContentWrapper>
       <FormWrapper onSubmit={onSubmit}>
         <h1>Register</h1>
+        <SignUpText>
+          Fill in the form below to be a mentor, seek for help or
+          both. It’s free. Forever.
+        </SignUpText>
         <InputFloatLabel
           name="email"
           label="Email"

@@ -85,5 +85,5 @@ export const GoogleBtnWrapper = styled.div`
   justify-content: center;
   margin-top: 40px;
 `;
-
+export const SignUpText = styled.p``;
 //  @media screen and (max-width: 600px) {}

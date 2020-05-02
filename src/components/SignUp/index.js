@@ -21,18 +21,13 @@ import {
   GoogleBtnWrapper,
   ImgWrapper,
   SignUpText,
+  regBtnStyle,
 } from './signup-styles';
 import EyeIcon from '../../assets/images/eye.png';
 import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
 import RegisterSvg from '../../assets/svgs/REGISTER.svg';
 import usePasswordValidator from '../PasswordValidator';
 import Button from '../Button';
-
-const regBtnStyle = {
-  width: '100%',
-  height: 42,
-  margin: 0,
-};
 
 const SignUpPage = () => (
   <div>

@@ -9,16 +9,16 @@ import {
 
 import { HomeContent } from './home-styles';
 import PageContainer from '../PageContainer';
-import HeadingOne from '../Heading';
+import Heading from '../Heading';
 
 const HomePage = () => {
   return (
     <div>
       <PageContainer>
         <HomeContent>
-          <HeadingOne>
+          <Heading h1>
             Home Page is accessible by signed in user
-          </HeadingOne>
+          </Heading>
           <HelpRequests />
         </HomeContent>
       </PageContainer>

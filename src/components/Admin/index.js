@@ -6,10 +6,11 @@ import { withAuthorization, withEmailVerification } from '../Session';
 import * as ROLES from '../../constants/roles';
 import * as ROUTES from '../../constants/routes';
 import PageContainer from '../PageContainer';
+import Heading from '../Heading';
 
 const AdminPage = () => (
   <PageContainer>
-    <h1>Admin</h1>
+    <Heading h1>Admin</Heading>
     <p>The Admin Page is accessible by signed in Admins.</p>
 
     <Switch>

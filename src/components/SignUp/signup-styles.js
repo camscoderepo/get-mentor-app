@@ -87,3 +87,9 @@ export const GoogleBtnWrapper = styled.div`
 `;
 export const SignUpText = styled.p``;
 //  @media screen and (max-width: 600px) {}
+
+export const regBtnStyle = {
+  width: '100%',
+  height: 42,
+  margin: 0,
+};

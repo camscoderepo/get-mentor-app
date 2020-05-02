@@ -1,12 +1,12 @@
 import React from 'react';
 import PageContainer from '../PageContainer';
-import HeadingOne from '../Heading';
+import Heading from '../Heading';
 
 const AboutPage = () => {
   return (
     <div>
       <PageContainer>
-        <HeadingOne>About Page</HeadingOne>
+        <Heading h1>About Page</Heading>
       </PageContainer>
     </div>
   );

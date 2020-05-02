@@ -13,18 +13,6 @@ const config = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-// In your .env
-
-// REACT_APP_API_KEY=“string key"
-// REACT_APP_AUTH_DOMAIN="string key"
-// REACT_APP_DATABASE_URL="string key"
-// REACT_APP_PROJECT_ID="string key"
-// REACT_APP_STORAGE_BUCKET="string key"
-// REACT_APP_MESSAGING_SENDER_ID= "string key"
-// REACT_APP_APP_ID="string key"
-// REACT_APP_MEASUREMENT_ID= "string key"
-// REACT_APP_CONFIRMATION_EMAIL_REDIRECT=http://localhost:3000
-
 class Firebase {
   constructor() {
     app.initializeApp(config);

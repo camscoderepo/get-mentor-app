@@ -36,12 +36,14 @@ export const ProfileHeaderBtnWrap = styled.div`
   justify-content: space-between;
 `;
 export const ProfileContentWrapper = styled.div`
-  margin-top: 8%;
+  /* margin-top: 8%; */
+  background-color: yellow;
 `;
 export const ProfileFormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: blue;
 `;
 
 export const FormFieldWrapper = styled.div`
@@ -52,11 +54,12 @@ export const FormFieldWrapper = styled.div`
 export const LeftSideBar = styled.div`
   position: absolute;
   left: 0%;
-  top: 26%;
+  top: 32.1%;
   right: auto;
   bottom: auto;
   width: 33%;
   height: 600px;
+  background-color: orange;
 `;
 
 export const ProfilePicWrapper = styled.div`
@@ -64,4 +67,16 @@ export const ProfilePicWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+export const ProfileImage = styled.img`
+  border-radius: 50%;
+`;
+export const CheckboxWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 38%;
+  margin-left: 20%;
+  background-color: red;
 `;

@@ -20,9 +20,10 @@ const AccountPage = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
-  const handleSaveClick = () => {
+  const handleSaveClick = (profileDetails) => {
     handleClose();
-    alert('Save Button Clicked');
+    console.log(profileDetails);
+    alert('profileDetails');
   };
 
   return (
@@ -34,6 +35,7 @@ const AccountPage = () => {
               setHeight={'100vh'}
               setWidth={'90vw'}
               setMargin={'2% auto'}
+              setPadding={'13% 4.2% 0 4.2%'}
             >
               <ProfileForm
                 close={handleClose}
@@ -43,7 +45,7 @@ const AccountPage = () => {
           )}
           <PageContainer>
             <AccountContent>
-              <HeadingOne>Account: {authUser.email}</HeadingOne>
+              <Heading h1>Account: {authUser.email}</Heading>
               <Button primary on onClick={() => setIsOpen(true)}>
                 Update Profile
               </Button>

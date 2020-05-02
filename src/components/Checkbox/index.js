@@ -1,5 +1,3 @@
-/*eslint no-unused-expressions: "off"*/
-
 import React from 'react';
 import {
   CheckboxContainer,

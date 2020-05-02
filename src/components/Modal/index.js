@@ -8,7 +8,17 @@ import { Overlay, Content } from './modal-styles';
 const Modal = (props) => {
   return (
     <Overlay>
-      <Content>{props.children}</Content>
+      <Content
+        setMargin={props.setMargin}
+        setBgColor={props.setBgColor}
+        setBorderRadius={props.setBorderRadius}
+        setPadding={props.setPadding}
+        setPosition={props.setPosition}
+        setHeight={props.setHeight}
+        setWidth={props.setWidth}
+      >
+        {props.children}
+      </Content>
     </Overlay>
   );
 };

@@ -30,8 +30,11 @@ const AccountPage = () => {
       {(authUser) => (
         <div>
           {isOpen && (
-            <Modal>
-              {' '}
+            <Modal
+              setHeight={'100vh'}
+              setWidth={'90vw'}
+              setMargin={'2% auto'}
+            >
               <ProfileForm
                 close={handleClose}
                 handleSaveClick={handleSaveClick}

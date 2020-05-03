@@ -5,12 +5,13 @@ import {
   ProfileHeaderImgLink,
   ProfileHeaderBtnWrap,
   ProfileContentWrapper,
-  ProfileFormWrapper,
   FormFieldWrapper,
   LeftSideBar,
   ProfilePicWrapper,
   CheckboxWrapper,
   ProfileImage,
+  descFieldOveride,
+  UploadLink,
 } from './profile-form-styles';
 import PageContainer from '../PageContainer';
 import * as ROUTES from '../../constants/routes';
@@ -71,36 +72,12 @@ const ProfileForm = (props) => {
         </ProfileHeaderContent>
       </ProfileHeader>
       <PageContainer>
+        <Heading h1>Profile</Heading>
         <ProfileContentWrapper>
-          <Heading h1>Profile</Heading>
-          <ProfileFormWrapper>
-            <FormFieldWrapper>
-              <InputFloatLabel
-                name="name"
-                label="Name"
-                type="text"
-                value={profileDetails.name}
-                onChange={handleDetails}
-              />
-              <InputFloatLabel
-                name="email"
-                label="Email"
-                type="email"
-                value={profileDetails.email}
-                onChange={handleDetails}
-              />
-              <InputFloatLabel
-                name="details"
-                label="Details"
-                type="text"
-                value={profileDetails.description}
-                onChange={handleDetails}
-              />
-            </FormFieldWrapper>
-          </ProfileFormWrapper>
           <LeftSideBar>
             <ProfilePicWrapper>
               <ProfileImage src={DefaultImg} />
+              <UploadLink>Change Photo</UploadLink>
             </ProfilePicWrapper>
             <CheckboxWrapper>
               <CheckBox
@@ -108,9 +85,33 @@ const ProfileForm = (props) => {
                 isMentor={isMentor}
                 onChange={handleCheckboxChange}
               />
-              <p>Appear as mentor</p>
+              <p style={{ marginLeft: '10px' }}>Appear as mentor</p>
             </CheckboxWrapper>
           </LeftSideBar>
+          <FormFieldWrapper>
+            <InputFloatLabel
+              name="name"
+              label="Name"
+              type="text"
+              value={profileDetails.name}
+              onChange={handleDetails}
+            />
+            <InputFloatLabel
+              name="email"
+              label="Email"
+              type="email"
+              value={profileDetails.email}
+              onChange={handleDetails}
+            />
+            <InputFloatLabel
+              style={descFieldOveride}
+              name="description"
+              label="Description"
+              type="text"
+              value={profileDetails.description}
+              onChange={handleDetails}
+            />
+          </FormFieldWrapper>
         </ProfileContentWrapper>
       </PageContainer>
     </>

@@ -23,7 +23,16 @@ const AccountPage = () => {
   const handleSaveClick = (profileDetails) => {
     handleClose();
     console.log(profileDetails);
-    alert('profileDetails');
+    alert(
+      `
+      Profile Data
+      
+      Name: ${profileDetails.name}
+      Email: ${profileDetails.email}
+      Description: ${profileDetails.description}
+      Mentor: ${profileDetails.mentor}   
+      `,
+    );
   };
 
   return (

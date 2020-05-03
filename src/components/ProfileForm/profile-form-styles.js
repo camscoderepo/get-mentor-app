@@ -36,14 +36,9 @@ export const ProfileHeaderBtnWrap = styled.div`
   justify-content: space-between;
 `;
 export const ProfileContentWrapper = styled.div`
-  /* margin-top: 8%; */
-  background-color: yellow;
-`;
-export const ProfileFormWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: blue;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
 
 export const FormFieldWrapper = styled.div`
@@ -52,14 +47,9 @@ export const FormFieldWrapper = styled.div`
 `;
 
 export const LeftSideBar = styled.div`
-  position: absolute;
-  left: 0%;
-  top: 32.1%;
-  right: auto;
-  bottom: auto;
+  padding-top: 1%;
+  position: relative;
   width: 33%;
-  height: 600px;
-  background-color: orange;
 `;
 
 export const ProfilePicWrapper = styled.div`
@@ -74,9 +64,16 @@ export const ProfileImage = styled.img`
 export const CheckboxWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-  max-width: 38%;
-  margin-left: 20%;
-  background-color: red;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
 `;
+
+export const UploadLink = styled.a`
+  text-decoration: underline;
+  margin-top: 20px;
+`;
+
+export const descFieldOveride = {
+  height: '188px',
+};

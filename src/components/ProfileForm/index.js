@@ -80,12 +80,16 @@ const ProfileForm = (props) => {
               <UploadLink>Change Photo</UploadLink>
             </ProfilePicWrapper>
             <CheckboxWrapper>
-              <CheckBox
-                checked={checked}
-                isMentor={isMentor}
-                onChange={handleCheckboxChange}
-              />
-              <p style={{ marginLeft: '10px' }}>Appear as mentor</p>
+              <label style={{ marginTop: '20px' }}>
+                <CheckBox
+                  checked={checked}
+                  isMentor={isMentor}
+                  onChange={handleCheckboxChange}
+                />
+                <span style={{ marginLeft: 8 }}>
+                  Appear as mentor
+                </span>
+              </label>
             </CheckboxWrapper>
           </LeftSideBar>
           <FormFieldWrapper>

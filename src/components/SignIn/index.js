@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp';
@@ -33,6 +33,12 @@ const INITIAL_STATE = {
   password: '',
   error: null,
 };
+
+// const [form, setValues] = useState({
+//   email: '',
+//   password: '',
+//   error: null
+// })
 
 class SignInFormBase extends Component {
   constructor(props) {
@@ -92,6 +98,71 @@ class SignInFormBase extends Component {
   }
 }
 
+// export default function SignInFormBase() {
+//   const [state, setState] = useState();
+//   const [email, setEmail ] = useState();
+//   const [password, setPassword] = useState();
+
+//   const onSubmit = (event) => {
+    
+//     setEmail(firebase)
+//       .doSignInWithEmail(email)
+//       .then(() => {
+//         setState({ state });
+//         history.push(ROUTES.HOME);
+//       })
+//       .catch((error) => {
+//         setState({ error });
+//       });
+
+//     setPassword(firebase)
+//       .doSignInWithPassword(password)
+//       .then(() => {
+//         setState({ state });
+//         this.props.history.push(ROUTES.HOME);
+//       })
+//       .catch((error) => {
+//         setState({ error });
+//       });
+
+//     event.preventDefault();
+//   };
+
+//   const onChange = (event) => {
+//     setState({ [event.target.name]: event.target.value });
+//   };
+
+
+//     const { email, password, error } = this.state;
+
+//     const isInvalid = password === '' || email === '';
+
+//     return (
+//       <form onSubmit={onSubmit}>
+//         <input
+//           name="email"
+//           value={email}
+//           onChange={onChange}
+//           type="text"
+//           placeholder="Email Address"
+//         />
+//         <input
+//           name="password"
+//           value={password}
+//           onChange={onChange}
+//           type="password"
+//           placeholder="Password"
+//         />
+//         <button disabled={isInvalid} type="submit">
+//           Sign In
+//         </button>
+
+//         {error && <p>{error.message}</p>}
+//       </form>
+//     );
+//   }
+
+
 class SignInGoogleBase extends Component {
   constructor(props) {
     super(props);
@@ -133,6 +204,47 @@ class SignInGoogleBase extends Component {
     );
   }
 }
+
+// export default function SignInGoogleBase() {
+//  const [state, setState] = useState();
+//  const [error, setError] = useState();
+
+//   const onSubmit = (event) => {
+//     setError(firebase)
+//       .doSignInWithGoogle()
+//       .then((socialAuthUser) => {
+//         // Create a user in your Firebase Realtime Database too
+//         return firebase.user(socialAuthUser.user.uid).set({
+//           username: socialAuthUser.user.displayName,
+//           email: socialAuthUser.user.email,
+//           roles: {},
+//         });
+//       })
+//       .then((socialAuthUser) => {
+//         this.setState({ error: null });
+//         this.props.history.push(ROUTES.HOME);
+//       })
+//       .catch((error) => {
+//         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
+//           error.message = ERROR_MSG_ACCOUNT_EXISTS;
+//         }
+//         this.setState({ error });
+//       });
+//     event.preventDefault();
+//   };
+//   render() {
+//     const { error } = this.state;
+//     return (
+//       <form onSubmit={this.onSubmit}>
+//         <h4>Sign With Google</h4>
+//         <button type="submit">Sign In with Google</button>
+
+//         <h4> Sign In With Email</h4>
+//         {error && <p>{error.message}</p>}
+//       </form>
+//     );
+//   }
+// }
 
 const SignInForm = compose(withRouter, withFirebase)(SignInFormBase);
 

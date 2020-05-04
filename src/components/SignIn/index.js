@@ -53,7 +53,7 @@ const SignInFormBase = (props) => {
   const onSubmit = (event) => {
     const { email, password } = formState;
 
-    this.props.firebase
+    props.firebase
       .doSignInWithEmailAndPassword(email, password)
       // CHANGE 5 this is how we handle the promise we are just resetting to initial formState here.
       .then(() => {

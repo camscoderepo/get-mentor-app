@@ -86,9 +86,8 @@ const SignInFormBase = (props) => {
   };
   //CHANGE 8 there is no render method in functional components just return
 
-  const { email, password } = formState;
-
-  const isInvalid = password === '' || email === '';
+  const isInvalid =
+    formState.password === '' || formState.email === '';
   //CHANGE 9 we no longer need this keyord to refer to methods in an arrow function
   //that is one of the nice features that you get in an arrow function
   return (

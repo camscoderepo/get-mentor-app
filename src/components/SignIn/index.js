@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp';
@@ -115,38 +115,38 @@ const SignInFormBase = (props) => {
   );
 };
 
-class SignInGoogleBase extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { error: null };
-  }
-  onSubmit = (event) => {
-    this.props.firebase
+const SignInGoogleBase = (props) => {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { error: null };
+  // }
+  const [error, setError] = useState(null);
+
+  const onSubmit = (event) => {
+    props.firebase
       .doSignInWithGoogle()
       .then((socialAuthUser) => {
         // Create a user in your Firebase Realtime Database too
-        return this.props.firebase.user(socialAuthUser.user.uid).set({
+        return props.firebase.user(socialAuthUser.user.uid).set({
           username: socialAuthUser.user.displayName,
           email: socialAuthUser.user.email,
           roles: {},
         });
       })
       .then((socialAuthUser) => {
-        this.setState({ error: null });
-        this.props.history.push(ROUTES.HOME);
+        setError({ error: null });
+        props.history.push(ROUTES.HOME);
       })
       .catch((error) => {
         if (error.code === ERROR_CODE_ACCOUNT_EXISTS) {
           error.message = ERROR_MSG_ACCOUNT_EXISTS;
         }
-        this.setState({ error });
+        setError({ error });
       });
     event.preventDefault();
   };
-  render() {
-    const { error } = this.state;
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={onSubmit}>
         <h4>Sign With Google</h4>
         <button type="submit">Sign In with Google</button>
 
@@ -154,7 +154,6 @@ class SignInGoogleBase extends Component {
         {error && <p>{error.message}</p>}
       </form>
     );
-  }
 }
 
 const SignInForm = compose(withRouter, withFirebase)(SignInFormBase);

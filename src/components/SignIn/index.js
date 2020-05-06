@@ -28,6 +28,8 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
   your personal account page.
 `;
 
+// Steps to convert stateful components into functional components see CHANGES below
+
 // CHANGE 1 we will use hooks to manage or initial state in component
 // const INITIAL_STATE = {
 //   email: '',

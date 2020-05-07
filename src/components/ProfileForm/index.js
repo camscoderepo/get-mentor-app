@@ -22,6 +22,7 @@ import InputFloatLabel from '../Input';
 import DefaultImg from '../../assets/images/no-img.png';
 import Heading from '../Heading';
 import CheckBox from '../Checkbox';
+import TagsUi from '../TagsUi';
 
 const ProfileForm = (props) => {
   const [isMentor, setIsMentor] = useState(false);
@@ -115,6 +116,7 @@ const ProfileForm = (props) => {
               value={profileDetails.description}
               onChange={handleDetails}
             />
+            <TagsUi />
           </FormFieldWrapper>
         </ProfileContentWrapper>
       </PageContainer>

@@ -22,7 +22,6 @@ const AccountPage = () => {
   };
   const handleSaveClick = (profileDetails) => {
     handleClose();
-    console.log(profileDetails);
     alert(
       `
       Profile Data
@@ -30,7 +29,8 @@ const AccountPage = () => {
       Name: ${profileDetails.name}
       Email: ${profileDetails.email}
       Description: ${profileDetails.description}
-      Mentor: ${profileDetails.mentor}   
+      Mentor: ${profileDetails.mentor}
+      Tags: ${profileDetails.tags}   
       `,
     );
   };

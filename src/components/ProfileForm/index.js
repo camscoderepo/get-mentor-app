@@ -33,6 +33,7 @@ const ProfileForm = (props) => {
     description: '',
     photoUrl: null,
     mentor: false,
+    tags: [],
   });
 
   const handleCheckboxChange = () => {
@@ -44,7 +45,18 @@ const ProfileForm = (props) => {
       });
     }
   };
-
+  const getTagEntered = (titles) => {
+    const tagsToAdd = [];
+    const getTags = Object.values(titles);
+    const newTags = getTags.forEach((tag, a) => {
+      const tagText = tag.text;
+      tagsToAdd.push(tagText);
+    });
+    setProfileDetails({
+      ...profileDetails,
+      tags: tagsToAdd,
+    });
+  };
   const handleDetails = (e) => {
     setProfileDetails({
       ...profileDetails,
@@ -116,7 +128,7 @@ const ProfileForm = (props) => {
               value={profileDetails.description}
               onChange={handleDetails}
             />
-            <TagsUi />
+            <TagsUi getTags={getTagEntered} />
           </FormFieldWrapper>
         </ProfileContentWrapper>
       </PageContainer>

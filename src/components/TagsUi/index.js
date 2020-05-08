@@ -57,9 +57,9 @@ const TagInput = (props) => {
   );
 };
 
-const TagUi = () => {
+const TagUi = (props) => {
   const [uiState, setUiState] = useState({
-    titles: {},
+    titles: [],
   });
   const [currentValue, setCurrentValue] = useState('');
 
@@ -69,10 +69,10 @@ const TagUi = () => {
     const { titles } = uiState;
     const newTitleId = uniqid();
     titles[newTitleId] = { text: title };
-
     setUiState({
       titles,
     });
+    props.getTags(titles);
   };
 
   const removeTitle = (id) => {

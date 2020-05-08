@@ -64,6 +64,16 @@ const ProfileForm = (props) => {
     });
   };
 
+  const handleImageChange = (e) => {
+    const image = e.target.files[0];
+    //send to server
+  };
+
+  const handleImgLinkClick = () => {
+    const fileInput = document.getElementById('imageInput');
+    fileInput.click();
+  };
+
   return (
     <>
       <ProfileHeader>
@@ -90,7 +100,15 @@ const ProfileForm = (props) => {
           <LeftSideBar>
             <ProfilePicWrapper>
               <ProfileImage src={DefaultImg} />
-              <UploadLink>Change Photo</UploadLink>
+              <UploadLink onClick={handleImgLinkClick}>
+                Change Photo
+              </UploadLink>
+              <input
+                id="imageInput"
+                style={{ display: 'none' }}
+                type="file"
+                onChange={handleImageChange}
+              />
             </ProfilePicWrapper>
             <CheckboxWrapper>
               <label style={{ marginTop: '20px' }}>

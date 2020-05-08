@@ -30,7 +30,8 @@ const AccountPage = () => {
       Email: ${profileDetails.email}
       Description: ${profileDetails.description}
       Mentor: ${profileDetails.mentor}
-      Tags: ${profileDetails.tags}   
+      Tags: ${profileDetails.tags} 
+      ProfileImage: ${profileDetails.imgUrl}  
       `,
     );
   };

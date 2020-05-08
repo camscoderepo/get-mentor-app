@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { withFirebase } from '../Firebase';
 import {
   ProfileHeader,
   ProfileHeaderContent,
@@ -23,8 +24,11 @@ import DefaultImg from '../../assets/images/no-img.png';
 import Heading from '../Heading';
 import CheckBox from '../Checkbox';
 import TagsUi from '../TagsUi';
+import storage from '../Firebase';
 
 const ProfileForm = (props) => {
+  const [image, setImage] = useState(null);
+  const [url, setUrl] = useState('');
   const [isMentor, setIsMentor] = useState(false);
   const [checked, setChecked] = useState(false);
   const [profileDetails, setProfileDetails] = useState({
@@ -34,6 +38,7 @@ const ProfileForm = (props) => {
     photoUrl: null,
     mentor: false,
     tags: [],
+    imgUrl: null,
   });
 
   const handleCheckboxChange = () => {
@@ -64,16 +69,44 @@ const ProfileForm = (props) => {
     });
   };
 
-  const handleImageChange = (e) => {
-    const image = e.target.files[0];
-    //send to server
-  };
-
   const handleImgLinkClick = () => {
-    const fileInput = document.getElementById('imageInput');
-    fileInput.click();
+    handleUpload();
+    // const fileInput = document.getElementById('imageInput');
+    // fileInput.click();
   };
 
+  const handleUpload = () => {
+    const uploadTask = props.firebase.storage
+      .ref(`images/${image.name}`)
+      .put(image);
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {},
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        props.firebase.storage
+          .ref('images')
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+            setUrl(url);
+            setProfileDetails({
+              ...profileDetails,
+              imgUrl: url,
+            });
+          });
+      },
+    );
+  };
+
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+  console.log(url);
   return (
     <>
       <ProfileHeader>
@@ -99,15 +132,18 @@ const ProfileForm = (props) => {
         <ProfileContentWrapper>
           <LeftSideBar>
             <ProfilePicWrapper>
-              <ProfileImage src={DefaultImg} />
+              <ProfileImage src={`${url}` || DefaultImg} />
               <UploadLink onClick={handleImgLinkClick}>
                 Change Photo
               </UploadLink>
               <input
                 id="imageInput"
-                style={{ display: 'none' }}
+                style={{
+                  marginTop: '20px',
+                  marginLeft: '57px',
+                }}
                 type="file"
-                onChange={handleImageChange}
+                onChange={handleChange}
               />
             </ProfilePicWrapper>
             <CheckboxWrapper>
@@ -154,4 +190,4 @@ const ProfileForm = (props) => {
   );
 };
 
-export default ProfileForm;
+export default withFirebase(ProfileForm);

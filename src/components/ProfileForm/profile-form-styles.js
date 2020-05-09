@@ -79,6 +79,4 @@ export const UploadLink = styled.a`
 
 export const descFieldOveride = {
   height: '100px',
-  paddingTop: '0',
-  paddingLeft: '0',
 };

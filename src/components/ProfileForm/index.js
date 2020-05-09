@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
 import Button from '../Button';
 import InputFloatLabel from '../Input';
+import TextAreaFloatLabel from '../TextArea';
 import DefaultImg from '../../assets/images/no-img.png';
 import Heading from '../Heading';
 import CheckBox from '../Checkbox';
@@ -177,7 +178,7 @@ const ProfileForm = (props) => {
               value={profileDetails.email}
               onChange={handleDetails}
             />
-            <InputFloatLabel
+            <TextAreaFloatLabel
               style={descFieldOveride}
               name="description"
               label="Description"

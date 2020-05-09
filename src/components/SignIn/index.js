@@ -5,12 +5,31 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import { SignInWrapper } from './sign-styles';
+import { 
+  SignInWrapper, 
+  SignInFormWrapper, 
+  SignInContentWrapper, 
+  SignInText, 
+  PasswordWrapper,
+  CheckboxWrapper,
+  StyledSpan,
+  GoogleSignInBtn,
+  GoogleBtnWrapper,
+  ImgWrapper,
+  SignInImg
+} from './sign-styles';
+import InputFloatLabel from '../Input';
+import { EyeIconImg } from '../SignUp/signup-styles';
+import EyeIcon from '../../assets/images/eye.png';
+import CheckBox from '../Checkbox';
+import Button from '../Button';
+import Heading from '../Heading';
+import GoogleSignIn from '../../assets/svgs/google-sign-in.svg';
+import SignInSvg from '../../assets/svgs/SIGNIN.svg';
 const SignInPage = () => (
   <div>
     <SignInWrapper>
-      <h1>SignIn</h1>
-      <SignInGoogle />
+      <Heading h1>Log in</Heading>
       <SignInForm />
       <PasswordForgetLink />
       <SignUpLink />
@@ -48,9 +67,10 @@ const SignInFormBase = (props) => {
   const [formState, setFormState] = useState({
     email: '',
     password: '',
+    checked: false
   });
   const [error, setError] = useState(null);
-
+  const [showPassword, setShowPassword] = useState(false);
   //CHANGE 4 need to declare methods as a constant also note how we destructered below
   const onSubmit = (event) => {
     const { email, password } = formState;
@@ -78,6 +98,8 @@ const SignInFormBase = (props) => {
     event.preventDefault();
   };
 
+ 
+
   const onChange = (event) => {
     //CHANGE 7 refactor to use our state managed in hooks
     // this.setState({ [event.target.name]: event.target.value });
@@ -88,40 +110,67 @@ const SignInFormBase = (props) => {
   };
   //CHANGE 8 there is no render method in functional components just return
 
+
+  const togglePasswordVisiblity = () => {
+    setShowPassword(!showPassword);
+  };
+
   const isInvalid =
     formState.password === '' || formState.email === '';
   //CHANGE 9 we no longer need this keyord to refer to methods in an arrow function
   //that is one of the nice features that you get in an arrow function
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        name="email"
-        value={formState.email}
-        onChange={onChange}
-        type="text"
-        placeholder="Email Address"
-      />
-      <input
-        name="password"
-        value={formState.password}
-        onChange={onChange}
-        type="password"
-        placeholder="Password"
-      />
-      <button disabled={isInvalid} type="submit">
-        Sign In
-      </button>
-
-      {error && <p>{error.message}</p>}
-    </form>
+    <SignInContentWrapper>
+      <SignInFormWrapper onSubmit={onSubmit}>
+        <SignInText>
+          Welcome back to Namjai!<br />
+          Remember that you can always switch between mentor or user role in your profile panel.
+        </SignInText>
+        <InputFloatLabel
+          name="email"
+          value={formState.email}
+          onChange={onChange}
+          type="text"
+          placeholder="Insert your Email"
+        />
+        <PasswordWrapper>
+          <InputFloatLabel
+            name="password"
+            value={formState.password}
+            onChange={onChange}
+            type="password"
+            placeholder="Insert your password"
+          />
+          <EyeIconImg
+            src={EyeIcon}
+            onClick={togglePasswordVisiblity}
+          />
+        </PasswordWrapper>
+        <CheckboxWrapper>
+          <label>
+            <CheckBox
+              onChange={onChange}
+            />
+            <span style={{ marginLeft: 8}}>
+              Remind me
+            </span>
+          </label>
+        </CheckboxWrapper>
+        <Button disabled={isInvalid} primary type="submit">
+          Sign In
+        </Button>
+        <StyledSpan>Or</StyledSpan>
+        <SignInGoogle />
+        {error && <p>{error.message}</p>}
+      </SignInFormWrapper>
+      <ImgWrapper>
+        <SignInImg src={SignInSvg} />
+      </ImgWrapper>
+    </SignInContentWrapper>
   );
 };
 
 const SignInGoogleBase = (props) => {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { error: null };
-  // }
   const [error, setError] = useState(null);
 
   const onSubmit = (event) => {
@@ -145,17 +194,19 @@ const SignInGoogleBase = (props) => {
         }
         setError({ error });
       });
-    event.preventDefault();
   };
-    return (
-      <form onSubmit={onSubmit}>
-        <h4>Sign With Google</h4>
-        <button type="submit">Sign In with Google</button>
-
-        <h4> Sign In With Email</h4>
-        {error && <p>{error.message}</p>}
-      </form>
-    );
+  const handleGoogleClicked = () => {
+    onSubmit();
+  }
+  return (
+    <GoogleBtnWrapper>
+      <GoogleSignInBtn 
+        src={GoogleSignIn}
+        onClick={handleGoogleClicked}
+      />
+      {error && <p>{error.message}</p>}
+    </GoogleBtnWrapper>
+  );
 }
 
 const SignInForm = compose(withRouter, withFirebase)(SignInFormBase);

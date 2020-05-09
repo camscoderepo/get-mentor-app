@@ -60,6 +60,8 @@ export const ProfilePicWrapper = styled.div`
 `;
 export const ProfileImage = styled.img`
   border-radius: 50%;
+  max-width: 126px;
+  max-height: 126px;
 `;
 export const CheckboxWrapper = styled.div`
   display: flex;
@@ -76,5 +78,7 @@ export const UploadLink = styled.a`
 `;
 
 export const descFieldOveride = {
-  height: '188px',
+  height: '100px',
+  paddingTop: '0',
+  paddingLeft: '0',
 };

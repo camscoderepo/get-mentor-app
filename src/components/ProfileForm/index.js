@@ -24,7 +24,6 @@ import DefaultImg from '../../assets/images/no-img.png';
 import Heading from '../Heading';
 import CheckBox from '../Checkbox';
 import TagsUi from '../TagsUi';
-import storage from '../Firebase';
 
 const ProfileForm = (props) => {
   const [image, setImage] = useState(null);
@@ -50,6 +49,7 @@ const ProfileForm = (props) => {
       });
     }
   };
+
   const getTagEntered = (titles) => {
     const tagsToAdd = [];
     const getTags = Object.values(titles);
@@ -69,13 +69,23 @@ const ProfileForm = (props) => {
     });
   };
 
-  const handleImgLinkClick = () => {
-    handleUpload();
-    // const fileInput = document.getElementById('imageInput');
-    // fileInput.click();
+  const handleImgLinkClick = (e) => {
+    const fileInput = document.getElementById('imageInput');
+    fileInput.click();
   };
-
-  const handleUpload = () => {
+  const changeImage = (e) => {
+    try {
+      if (e.target.files[0]) {
+        const newImage = e.target.files[0];
+        setImage(newImage);
+        handleUpload(newImage);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleUpload = (image) => {
+    console.log('called', image);
     const uploadTask = props.firebase.storage
       .ref(`images/${image.name}`)
       .put(image);
@@ -101,12 +111,6 @@ const ProfileForm = (props) => {
     );
   };
 
-  const handleChange = (e) => {
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
-    }
-  };
-  console.log(url);
   return (
     <>
       <ProfileHeader>
@@ -139,11 +143,10 @@ const ProfileForm = (props) => {
               <input
                 id="imageInput"
                 style={{
-                  marginTop: '20px',
-                  marginLeft: '57px',
+                  display: 'none',
                 }}
                 type="file"
-                onChange={handleChange}
+                onChange={changeImage}
               />
             </ProfilePicWrapper>
             <CheckboxWrapper>

@@ -14,7 +14,7 @@ export const Overlay = styled.div`
   z-index: 999;
   cursor: pointer;
 `;
-
+// Cutomization props
 export const Content = styled.div`
   margin: ${(props) => props.setMargin || '15% auto'};
   background-color: ${(props) => props.setBgColor || 'white'};

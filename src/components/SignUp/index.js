@@ -28,6 +28,7 @@ import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
 import RegisterSvg from '../../assets/svgs/REGISTER.svg';
 import usePasswordValidator from '../PasswordValidator';
 import Button from '../Button';
+import Heading from '../Heading';
 
 const SignUpPage = () => (
   <div>
@@ -129,7 +130,7 @@ const SignUpHooks = (props) => {
   return (
     <ContentWrapper>
       <FormWrapper onSubmit={onSubmit}>
-        <h1>Register</h1>
+        <Heading h1>Register</Heading>
         <SignUpText>
           Fill in the form below to be a mentor, or to seek help. It’s
           free Forever.

@@ -17,12 +17,12 @@ export const HeroContainer = styled.div`
   justify-content: space-between;
   padding-bottom: 70px;
   max-width: 100vw;
-  /* background-color: green; */
   @media screen and (max-width: 1100px) {
     margin-top: 5%;
   }
   @media screen and (max-width: 768px) {
     margin-top: 15%;
+    padding-top: 10%;
     flex-direction: column;
     align-items: center;
   }
@@ -60,6 +60,8 @@ export const HeroImgWrapper = styled.img`
 export const LandingMentorsContainer = styled.div`
   background-color: #f0f4f7;
   margin-bottom: 115px;
+  margin-left: -4.5%;
+  margin-right: -4.5%;
   padding: 50px;
   @media screen and (max-width: 768px) {
     padding: 50px 0 50px 0;

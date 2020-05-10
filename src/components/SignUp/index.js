@@ -22,6 +22,7 @@ import {
   ImgWrapper,
   SignUpText,
   regBtnStyle,
+  hdOveride,
 } from './signup-styles';
 import EyeIcon from '../../assets/images/eye.png';
 import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
@@ -130,7 +131,9 @@ const SignUpHooks = (props) => {
   return (
     <ContentWrapper>
       <FormWrapper onSubmit={onSubmit}>
-        <Heading h1>Register</Heading>
+        <Heading h1 style={hdOveride}>
+          Register
+        </Heading>
         <SignUpText>
           Fill in the form below to be a mentor, or to seek help. It’s
           free Forever.
@@ -222,7 +225,7 @@ const SignUpGoogleBase = (props) => {
 };
 
 const SignUpLink = () => (
-  <p>
+  <p style={{ textAlign: 'center', marginTop: '20px' }}>
     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );

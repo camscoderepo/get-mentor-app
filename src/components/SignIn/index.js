@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp';
-import { PasswordForgetLink } from '../PasswordForget';
+
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import {
@@ -17,6 +17,7 @@ import {
   GoogleBtnWrapper,
   ImgWrapper,
   SignInImg,
+  hdOveride,
 } from './sign-styles';
 import InputFloatLabel from '../UI_Components/Input';
 import { EyeIconImg } from '../SignUp/signup-styles';
@@ -29,10 +30,7 @@ import SignInSvg from '../../assets/svgs/SIGNIN.svg';
 const SignInPage = () => (
   <div>
     <SignInWrapper>
-      <Heading h1>Log in</Heading>
       <SignInForm />
-      <PasswordForgetLink />
-      <SignUpLink />
     </SignInWrapper>
   </div>
 );
@@ -119,6 +117,9 @@ const SignInFormBase = (props) => {
   return (
     <SignInContentWrapper>
       <SignInFormWrapper onSubmit={onSubmit}>
+        <Heading style={hdOveride} h1>
+          Log in
+        </Heading>
         <SignInText>
           Welcome back to Namjai!
           <br />
@@ -157,6 +158,7 @@ const SignInFormBase = (props) => {
         <StyledSpan>Or</StyledSpan>
         <SignInGoogle />
         {error && <p>{error.message}</p>}
+        <SignUpLink />
       </SignInFormWrapper>
       <ImgWrapper>
         <SignInImg src={SignInSvg} />

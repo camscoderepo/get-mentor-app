@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const SignUpWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 4.2%;
   margin-bottom: 20%;
   @media screen and (max-width: 768px) {
     margin-bottom: 40%;
@@ -14,11 +13,14 @@ export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   width: 90%;
-  max-width: 450px;
-
+  max-width: 500px;
   @media screen and (max-width: 768px) {
     width: 80%;
     max-width: 80%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 90%;
+    max-width: 95%;
   }
 `;
 
@@ -52,6 +54,7 @@ export const GoogleSignUpBtn = styled.img`
 `;
 export const ContentWrapper = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 
   @media screen and (max-width: 768px) {
@@ -92,4 +95,7 @@ export const regBtnStyle = {
   width: '100%',
   height: 42,
   margin: 0,
+};
+export const hdOveride = {
+  marginLeft: '-3px',
 };

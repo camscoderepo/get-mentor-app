@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
+import { withAuthentication } from '../Session';
 import Navbar from '../Navbar';
+import { Container } from '../UI_Components/Container';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import PasswordForgetPage from '../PasswordForget';
@@ -11,14 +14,12 @@ import AdminPage from '../Admin';
 import LandingPage from '../Landing';
 import Footer from '../Footer';
 import Tabbar from '../Tabbar';
-import * as ROUTES from '../../constants/routes';
-import { withAuthentication } from '../Session';
 
 const App = () => (
   <Router>
     <Navbar />
     <Tabbar />
-    <div className="container">
+    <Container>
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route path={ROUTES.HOME} component={HomePage} />
       <Route path={ROUTES.MENTORS} component={MentorsPage} />
@@ -30,7 +31,7 @@ const App = () => (
       />
       <Route path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route path={ROUTES.ADMIN} component={AdminPage} />
-    </div>
+    </Container>
     <Footer />
   </Router>
 );

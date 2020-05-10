@@ -9,7 +9,7 @@ import {
 
 import { HomeContent } from './home-styles';
 import PageContainer from '../PageContainer';
-import Heading from '../Heading';
+import Heading from '../UI_Components/Heading';
 
 const HomePage = () => {
   return (

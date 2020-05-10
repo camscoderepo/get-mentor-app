@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { compose } from 'recompose';
-import InputFloatLabel from '../Input';
+import InputFloatLabel from '../UI_Components/Input';
 import { Link, withRouter } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 import { validateEmail } from '../../utils/ValidateEmail';
-import CheckBox from '../Checkbox';
+import CheckBox from '../UI_Components/Checkbox';
 import {
   // Button,
   Errors,
@@ -27,8 +27,8 @@ import EyeIcon from '../../assets/images/eye.png';
 import GoogleSignUp from '../../assets/svgs/google-sign-up.svg';
 import RegisterSvg from '../../assets/svgs/REGISTER.svg';
 import usePasswordValidator from '../PasswordValidator';
-import Button from '../Button';
-import Heading from '../Heading';
+import Button from '../UI_Components/Button';
+import Heading from '../UI_Components/Heading';
 
 const SignUpPage = () => (
   <div>

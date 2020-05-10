@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import * as COLORS from '../../constants/colors';
+import * as COLORS from '../../../constants/colors';
 
 export const StyledButton = styled.button`
   border-radius: 4px;

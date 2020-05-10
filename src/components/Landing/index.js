@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import Button from '../Button';
+import Button from '../UI_Components/Button';
 import PageContainer from '../PageContainer';
-import HeadingOne from '../Heading';
+import Heading from '../UI_Components/Heading';
 import LovingDude from '../../assets/svgs/loving.svg';
 import {
   HeroContainer,
@@ -24,9 +24,7 @@ const LandingPage = () => (
   <PageContainer>
     <HeroContainer>
       <HeroContentLeft>
-        <HeadingOne>
-          Connecting people to improve their lives
-        </HeadingOne>
+        <Heading h1>Connecting people to improve their lives</Heading>
         <p>
           Do you want be a Mentor? Or do you need help with something?
           Maybe both? This is the place for you. We connect people

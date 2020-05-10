@@ -1,13 +1,13 @@
 import React from 'react';
 import { MentorsContent } from './mentor-styles';
 import PageContainer from '../PageContainer';
-import HeadingOne from '../Heading';
+import Heading from '../UI_Components/Heading';
 
 const MentorsPage = () => {
   return (
     <PageContainer>
       <MentorsContent>
-        <HeadingOne>Mentors Page</HeadingOne>
+        <Heading h1>Mentors Page</Heading>
       </MentorsContent>
     </PageContainer>
   );

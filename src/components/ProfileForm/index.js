@@ -18,13 +18,13 @@ import PageContainer from '../PageContainer';
 import * as ROUTES from '../../constants/routes';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
-import Button from '../Button';
-import InputFloatLabel from '../Input';
-import TextAreaFloatLabel from '../TextArea';
+import Button from '../UI_Components/Button';
+import InputFloatLabel from '../UI_Components/Input';
+import TextAreaFloatLabel from '../UI_Components/TextArea';
 import DefaultImg from '../../assets/images/no-img.png';
-import Heading from '../Heading';
-import CheckBox from '../Checkbox';
-import TagsUi from '../TagsUi';
+import Heading from '../UI_Components/Heading';
+import CheckBox from '../UI_Components/Checkbox';
+import TagsUi from '../UI_Components/TagsUi';
 
 const ProfileForm = (props) => {
   const [image, setImage] = useState(null);

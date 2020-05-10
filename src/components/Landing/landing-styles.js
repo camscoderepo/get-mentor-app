@@ -15,24 +15,19 @@ export const HeroContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 60px;
-  padding-right: 60px;
   padding-bottom: 70px;
   max-width: 100vw;
+  /* background-color: green; */
   @media screen and (max-width: 1100px) {
     margin-top: 5%;
   }
   @media screen and (max-width: 768px) {
     margin-top: 15%;
-    padding-left: 4.2%;
-    padding-right: 4.2%;
     flex-direction: column;
     align-items: center;
   }
   @media screen and (max-width: 600px) {
     padding-top: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
   }
   @media screen and (max-width: 400px) {
     padding-top: 8%;

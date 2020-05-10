@@ -1,6 +1,6 @@
 import React from 'react';
 import { withFirebase } from '../Firebase';
-import Button from '../Button';
+import Button from '../UI_Components/Button';
 
 const SignOutButton = ({ firebase }) => (
   <Button primary onClick={firebase.doSignOut}>

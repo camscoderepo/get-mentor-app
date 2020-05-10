@@ -5,7 +5,7 @@ import * as ROLES from '../../constants/roles';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/svgs/logo.svg';
 import { ReactComponent as MobileLogo } from '../../assets/svgs/mobile-logo.svg';
-import Button from '../Button';
+import Button from '../UI_Components/Button';
 import {
   Header,
   NavContainer,

@@ -5,25 +5,25 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import { 
-  SignInWrapper, 
-  SignInFormWrapper, 
-  SignInContentWrapper, 
-  SignInText, 
+import {
+  SignInWrapper,
+  SignInFormWrapper,
+  SignInContentWrapper,
+  SignInText,
   PasswordWrapper,
   CheckboxWrapper,
   StyledSpan,
   GoogleSignInBtn,
   GoogleBtnWrapper,
   ImgWrapper,
-  SignInImg
+  SignInImg,
 } from './sign-styles';
-import InputFloatLabel from '../Input';
+import InputFloatLabel from '../UI_Components/Input';
 import { EyeIconImg } from '../SignUp/signup-styles';
 import EyeIcon from '../../assets/images/eye.png';
-import CheckBox from '../Checkbox';
-import Button from '../Button';
-import Heading from '../Heading';
+import CheckBox from '../UI_Components/Checkbox';
+import Button from '../UI_Components/Button';
+import Heading from '../UI_Components/Heading';
 import GoogleSignIn from '../../assets/svgs/google-sign-in.svg';
 import SignInSvg from '../../assets/svgs/SIGNIN.svg';
 const SignInPage = () => (
@@ -67,7 +67,7 @@ const SignInFormBase = (props) => {
   const [formState, setFormState] = useState({
     email: '',
     password: '',
-    checked: false
+    checked: false,
   });
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -98,8 +98,6 @@ const SignInFormBase = (props) => {
     event.preventDefault();
   };
 
- 
-
   const onChange = (event) => {
     //CHANGE 7 refactor to use our state managed in hooks
     // this.setState({ [event.target.name]: event.target.value });
@@ -109,7 +107,6 @@ const SignInFormBase = (props) => {
     });
   };
   //CHANGE 8 there is no render method in functional components just return
-
 
   const togglePasswordVisiblity = () => {
     setShowPassword(!showPassword);
@@ -123,8 +120,10 @@ const SignInFormBase = (props) => {
     <SignInContentWrapper>
       <SignInFormWrapper onSubmit={onSubmit}>
         <SignInText>
-          Welcome back to Namjai!<br />
-          Remember that you can always switch between mentor or user role in your profile panel.
+          Welcome back to Namjai!
+          <br />
+          Remember that you can always switch between mentor or user
+          role in your profile panel.
         </SignInText>
         <InputFloatLabel
           name="email"
@@ -148,12 +147,8 @@ const SignInFormBase = (props) => {
         </PasswordWrapper>
         <CheckboxWrapper>
           <label>
-            <CheckBox
-              onChange={onChange}
-            />
-            <span style={{ marginLeft: 8}}>
-              Remind me
-            </span>
+            <CheckBox onChange={onChange} />
+            <span style={{ marginLeft: 8 }}>Remind me</span>
           </label>
         </CheckboxWrapper>
         <Button disabled={isInvalid} primary type="submit">
@@ -197,17 +192,17 @@ const SignInGoogleBase = (props) => {
   };
   const handleGoogleClicked = () => {
     onSubmit();
-  }
+  };
   return (
     <GoogleBtnWrapper>
-      <GoogleSignInBtn 
+      <GoogleSignInBtn
         src={GoogleSignIn}
         onClick={handleGoogleClicked}
       />
       {error && <p>{error.message}</p>}
     </GoogleBtnWrapper>
   );
-}
+};
 
 const SignInForm = compose(withRouter, withFirebase)(SignInFormBase);
 

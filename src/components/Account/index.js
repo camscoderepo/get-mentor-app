@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import { AuthUserContext } from '../Session';
 import { compose } from 'recompose';
 import { withAuthorization, withEmailVerification } from '../Session';
-import * as ROUTES from '../../constants/routes';
-import { Link } from 'react-router-dom';
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import PageContainer from '../PageContainer';
-import HeadingOne from '../Heading';
 import { AccountContent } from './account-styles';
-import Button from '../Button';
-import Modal from '../Modal';
+import Button from '../UI_Components/Button';
+import Modal from '../UI_Components/Modal';
 import ProfileForm from '../ProfileForm';
-import Heading from '../Heading';
+import Heading from '../UI_Components/Heading';
 
 const AccountPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +20,7 @@ const AccountPage = () => {
   const handleSaveClick = (profileDetails) => {
     handleClose();
     alert(
-      `
-      Profile Data
-      
+      `Profile Data
       Name: ${profileDetails.name}
       Email: ${profileDetails.email}
       Description: ${profileDetails.description}

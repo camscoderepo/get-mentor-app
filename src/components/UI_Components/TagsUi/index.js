@@ -7,7 +7,7 @@ import {
   Form,
   Input,
 } from './tags-ui-styles';
-import Cross from '../../assets/images/cross.png';
+import Cross from '../../../assets/images/cross.png';
 
 const Title = (props) => {
   const { title, id } = props;

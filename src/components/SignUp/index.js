@@ -7,6 +7,8 @@ import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 import { validateEmail } from '../../utils/ValidateEmail';
 import CheckBox from '../UI_Components/Checkbox';
+import * as COLORS from '../../constants/colors';
+
 import {
   // Button,
   Errors,
@@ -226,7 +228,10 @@ const SignUpGoogleBase = (props) => {
 
 const SignUpLink = () => (
   <p style={{ textAlign: 'center', marginTop: '20px' }}>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don't have an account?{' '}
+    <Link style={{ color: COLORS.PRIMARY }} to={ROUTES.SIGN_UP}>
+      Sign Up
+    </Link>
   </p>
 );
 

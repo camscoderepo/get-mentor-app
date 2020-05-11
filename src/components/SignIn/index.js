@@ -66,7 +66,6 @@ const SignInFormBase = (props) => {
   const [formState, setFormState] = useState({
     email: '',
     password: '',
-    checked: false,
   });
   const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -131,7 +130,7 @@ const SignInFormBase = (props) => {
           name="email"
           value={formState.email}
           onChange={onChange}
-          type="text"
+          type="email"
           placeholder="Insert your Email"
         />
         <PasswordWrapper>
@@ -139,7 +138,7 @@ const SignInFormBase = (props) => {
             name="password"
             value={formState.password}
             onChange={onChange}
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             placeholder="Insert your password"
           />
           <EyeIconImg
